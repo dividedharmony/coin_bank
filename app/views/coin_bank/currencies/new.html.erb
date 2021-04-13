@@ -1,0 +1,7 @@
+<h1>Currency#new</h1>
+
+<%= form_with model: @currency, local: true do |f| -%>
+  <%= f.label :symbol, "Cryptocurrency Symbol" %>
+  <%= f.text_field :symbol %>
+  <%= f.submit "Create" %>
+<% end %>
