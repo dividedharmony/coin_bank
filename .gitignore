@@ -32,6 +32,9 @@
 .env
 .env.test
 
+# ignore rspec-related tmp files
+spec/examples.txt
+
 /public/packs
 /public/packs-test
 /node_modules
