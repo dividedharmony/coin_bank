@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=BTC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 15 Apr 2021 02:26:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '203'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dde34ac260cee9885bb0f3fee9180b8fd1618453618; expires=Sat, 15-May-21
+        02:26:58 GMT; path=/; domain=.coinmarketcap.com; HttpOnly; SameSite=Lax; Secure
+      Vary:
+      - origin
+      Cache-Control:
+      - no-cache
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0974f37817000057a23381e000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6401bb6cef7e57a2-IAD
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "status": {
+                "timestamp": "2021-04-15T02:26:58.738Z",
+                "error_code": 1001,
+                "error_message": "This API Key is invalid.",
+                "elapsed": 0,
+                "credit_count": 0
+            }
+        }
+  recorded_at: Thu, 15 Apr 2021 02:26:58 GMT
+recorded_with: VCR 6.0.0
