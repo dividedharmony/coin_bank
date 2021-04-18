@@ -42,12 +42,11 @@ RSpec.describe CoinBank::CreateCurrency, :vcr do
 
         context 'if currency is not valid' do
           before do
-            CoinBank::Currency.create!(
+            create(
+              :currency,
               name: "Other Bitcoin",
-              slug: "bitcoin",
               symbol: "BTC",
-              logo_url: "https://www.example.com/other-bitcoin.png",
-              cmc_id: 'NADA123'
+              slug: "bitcoin"
             )
           end
 
