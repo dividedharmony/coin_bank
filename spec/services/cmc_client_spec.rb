@@ -35,7 +35,6 @@ RSpec.describe CmcClient, :vcr do
         it "returns the response data wrapped in a Success monad" do
           expect(subject).to be_success
           response_data = subject.value!
-          puts response_data
           expect(response_data['name']).to eq('Ethereum')
           expect(response_data['slug']).to eq('ethereum')
           expect(response_data['logo']).to eq('https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png')
