@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# User authentication
+gem 'devise'
+
 # Domain Logic Dependencies
 gem 'faraday'
 gem 'dry-monads'
