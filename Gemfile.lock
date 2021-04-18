@@ -93,6 +93,11 @@ GEM
       dry-core (~> 0.4, >= 0.4.4)
       dry-equalizer
     erubi (1.10.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     faraday (1.3.0)
       faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
@@ -252,6 +257,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   dotenv-rails
   dry-monads
+  factory_bot_rails
   faraday
   jbuilder (~> 2.7)
   listen (~> 3.3)
