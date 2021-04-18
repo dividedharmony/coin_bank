@@ -1,0 +1,14 @@
+<main>
+  <h1>
+    <%= @currency.name %>
+  </h1>
+
+  <%= image_tag @currency.logo_url, alt: @currency.name, size: "25x25" %>
+
+  <h3>Stats:</h3>
+  <ul>
+    <li>
+      Symbol: <%= @currency.symbol -%>
+    </li>
+  </ul>
+</main>

@@ -5,5 +5,9 @@ module CoinBank
     def new
       @currency = CoinBank::Currency.new
     end
+
+    def show
+      @currency = CoinBank::Currency.find_by!(slug: params[:id])
+    end
   end
 end
