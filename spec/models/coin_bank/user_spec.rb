@@ -6,6 +6,7 @@ RSpec.describe CoinBank::User, type: :model do
   describe "validations" do
     subject { build(:user) }
 
-    pending "add some validation examples to (or delete) #{__FILE__}"
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_presence_of(:password) }
   end
 end
