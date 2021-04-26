@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :coin_bank_user, class: 'CoinBank::User' do
+  factory :user, class: 'CoinBank::User' do
     sequence :email do |n|
       "random_#{n}th_user@example.com"
     end
