@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :coin_bank_user, class: 'CoinBank::User' do
+    sequence :email do |n|
+      "random_#{n}th_user@example.com"
+    end
+    password { "fake2468password" }
+    password_confirmation { "fake2468password" }
+  end
+
   factory :currency, class: CoinBank::Currency do
     sequence :name do |n|
       "Bitcoin ##{n}th Fork"
