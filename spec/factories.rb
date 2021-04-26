@@ -24,4 +24,9 @@ FactoryBot.define do
     end
     logo_url { "https://www.example.com/fake_logo.png" }
   end
+
+  factory :balance, class: CoinBank::Balance do
+    user
+    currency
+  end
 end
