@@ -3,6 +3,10 @@
 require "rails_helper"
 
 RSpec.describe CoinBank::Currency do
+  describe "associations" do
+    it { is_expected.to have_many(:balances).class_name("CoinBank::Balance") }
+  end
+
   describe "validations" do
     subject do
       described_class.new(

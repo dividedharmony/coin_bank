@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_112241) do
+ActiveRecord::Schema.define(version: 2021_04_26_153837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coin_bank_balances", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "currency_id", null: false
+    t.decimal "amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["currency_id"], name: "index_coin_bank_balances_on_currency_id"
+    t.index ["user_id"], name: "index_coin_bank_balances_on_user_id"
+  end
 
   create_table "coin_bank_currencies", force: :cascade do |t|
     t.string "name", null: false
@@ -37,4 +47,6 @@ ActiveRecord::Schema.define(version: 2021_04_18_112241) do
     t.index ["reset_password_token"], name: "index_coin_bank_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coin_bank_balances", "coin_bank_currencies", column: "currency_id"
+  add_foreign_key "coin_bank_balances", "coin_bank_users", column: "user_id"
 end

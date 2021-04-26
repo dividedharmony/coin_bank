@@ -2,6 +2,8 @@
 
 module CoinBank
   class Currency < ApplicationRecord
+    has_many :balances, class_name: "CoinBank::Balance", inverse_of: :currency
+
     validates :name,
               :symbol,
               :cmc_id,
