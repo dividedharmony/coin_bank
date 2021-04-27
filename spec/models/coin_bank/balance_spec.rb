@@ -9,9 +9,19 @@ RSpec.describe CoinBank::Balance, type: :model do
   end
 
   describe "validations" do
-    subject { build(:balance) }
+    subject { build(:balance, currency: currency) }
 
-    it { is_expected.to validate_numericality_of(:amount).is_greater_than_or_equal_to(0) }
+    context "if balance is of a fiat currency" do
+      let(:currency) { create(:currency, fiat: true) }
+
+      it { is_expected.not_to validate_numericality_of(:amount).is_greater_than_or_equal_to(0) }
+    end
+
+    context "if balance is of a cryptocurrency" do
+      let(:currency) { create(:currency, fiat: false) }
+
+      it { is_expected.to validate_numericality_of(:amount).is_greater_than_or_equal_to(0) }
+    end
   end
 
   describe "scopes" do
