@@ -27,4 +27,20 @@ RSpec.describe CoinBank::Currency do
     it { is_expected.to validate_uniqueness_of(:slug).case_insensitive }
     it { is_expected.to validate_uniqueness_of(:cmc_id).case_insensitive }
   end
+
+  describe "#crypto?" do
+    subject { currency.crypto? }
+
+    context "if currency is a fiat currency" do
+      let(:currency) { create(:currency, fiat: true) }
+
+      it { is_expected.to be false }
+    end
+
+    context "if currency is not a fiat currency" do
+      let(:currency) { create(:currency, fiat: false) }
+
+      it { is_expected.to be true }
+    end
+  end
 end
