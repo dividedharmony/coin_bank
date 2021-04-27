@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 2021_04_27_044939) do
     t.index ["reset_password_token"], name: "index_coin_bank_users_on_reset_password_token", unique: true
   end
 
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
+
   add_foreign_key "coin_bank_balances", "coin_bank_currencies", column: "currency_id"
   add_foreign_key "coin_bank_balances", "coin_bank_users", column: "user_id"
 end
