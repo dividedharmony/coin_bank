@@ -6,5 +6,7 @@ module CoinBank
     belongs_to :currency, class_name: "CoinBank::Currency", inverse_of: :balances
 
     validates :amount, numericality: { greater_than_or_equal_to: 0 }
+
+    scope :latest_per_currency, -> { select('DISTINCT ON(currency_id) *').order(:currency_id, created_at: :desc) }
   end
 end
