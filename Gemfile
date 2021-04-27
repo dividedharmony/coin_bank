@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Data (as opposed to schema) migrations
+gem 'data_migrate'
+
 # User authentication
 gem 'devise'
 
