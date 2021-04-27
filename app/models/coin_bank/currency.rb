@@ -10,5 +10,9 @@ module CoinBank
               :slug,
               presence: true,
               uniqueness: { case_sensitive: false }
+
+    def crypto?
+      !fiat?
+    end
   end
 end
