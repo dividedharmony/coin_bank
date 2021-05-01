@@ -33,9 +33,22 @@ FactoryBot.define do
   factory :transaction, class: CoinBank::Transaction do
     user
     transacted_at { Time.zone.now }
-    association :from_before_balance, factory: :balance
-    association :from_after_balance, factory: :balance
-    association :to_before_balance, factory: :balance
-    association :to_after_balance, factory: :balance
+
+    after :build do |trans|
+      if trans.from_before_balance.nil? || trans.from_after_balance.nil?
+        from_currency = trans.from_before_balance&.currency ||
+          trans.from_after_balance&.currency ||
+          create(:currency)
+        trans.from_before_balance ||= create(:balance, currency: from_currency)
+        trans.from_after_balance ||= create(:balance, currency: from_currency)
+      end
+      if trans.to_before_balance.nil? || trans.to_after_balance.nil?
+        to_currency = trans.to_before_balance&.currency ||
+          trans.to_after_balance&.currency ||
+          create(:currency)
+        trans.to_before_balance ||= create(:balance, currency: to_currency)
+        trans.to_after_balance ||= create(:balance, currency: to_currency)
+      end
+    end
   end
 end
