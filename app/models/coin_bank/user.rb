@@ -11,4 +11,8 @@ class CoinBank::User < ApplicationRecord
            -> { latest_per_currency },
            class_name: "CoinBank::Balance",
            inverse_of: :user
+  has_many :transactions,
+           class_name: "CoinBank::Transaction",
+           inverse_of: :user,
+           dependent: :destroy
 end

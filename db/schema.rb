@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_044939) do
+ActiveRecord::Schema.define(version: 2021_04_27_131605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,26 @@ ActiveRecord::Schema.define(version: 2021_04_27_044939) do
     t.boolean "fiat", default: false, null: false
   end
 
+  create_table "coin_bank_transactions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "from_before_balance_id", null: false
+    t.bigint "to_before_balance_id", null: false
+    t.bigint "from_after_balance_id", null: false
+    t.bigint "to_after_balance_id", null: false
+    t.decimal "from_amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.decimal "to_amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.decimal "fee_amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.decimal "exchange_rate", precision: 20, scale: 10, default: "0.0", null: false
+    t.datetime "transacted_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["from_after_balance_id"], name: "index_coin_bank_transactions_on_from_after_balance_id"
+    t.index ["from_before_balance_id"], name: "index_coin_bank_transactions_on_from_before_balance_id"
+    t.index ["to_after_balance_id"], name: "index_coin_bank_transactions_on_to_after_balance_id"
+    t.index ["to_before_balance_id"], name: "index_coin_bank_transactions_on_to_before_balance_id"
+    t.index ["user_id"], name: "index_coin_bank_transactions_on_user_id"
+  end
+
   create_table "coin_bank_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,4 +73,9 @@ ActiveRecord::Schema.define(version: 2021_04_27_044939) do
 
   add_foreign_key "coin_bank_balances", "coin_bank_currencies", column: "currency_id"
   add_foreign_key "coin_bank_balances", "coin_bank_users", column: "user_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_balances", column: "from_after_balance_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_balances", column: "from_before_balance_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_balances", column: "to_after_balance_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_balances", column: "to_before_balance_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_users", column: "user_id"
 end

@@ -29,4 +29,13 @@ FactoryBot.define do
     user
     currency
   end
+
+  factory :transaction, class: CoinBank::Transaction do
+    user
+    transacted_at { Time.zone.now }
+    association :from_before_balance, factory: :balance
+    association :from_after_balance, factory: :balance
+    association :to_before_balance, factory: :balance
+    association :to_after_balance, factory: :balance
+  end
 end
