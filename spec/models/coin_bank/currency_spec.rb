@@ -30,6 +30,26 @@ RSpec.describe CoinBank::Currency do
     it { is_expected.to validate_uniqueness_of(:cmc_id).case_insensitive }
   end
 
+  describe "scopes" do
+    describe ".fiat" do
+      subject { described_class.fiat }
+
+      let!(:fiat_currency) { create(:currency, fiat: true) }
+      let!(:cryptocurrency) { create(:currency, fiat: false) }
+
+      it { is_expected.to contain_exactly(fiat_currency) }
+    end
+
+    describe ".crypto" do
+      subject { described_class.crypto }
+
+      let!(:fiat_currency) { create(:currency, fiat: true) }
+      let!(:cryptocurrency) { create(:currency, fiat: false) }
+
+      it { is_expected.to contain_exactly(cryptocurrency) }
+    end
+  end
+
   describe "#crypto?" do
     subject { currency.crypto? }
 
