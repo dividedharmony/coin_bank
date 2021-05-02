@@ -16,6 +16,8 @@ module CoinBank
               numericality: { greater_than_or_equal_to: 0 }
     validate :balance_integrity
 
+    attr_accessor :from_currency_id, :to_currency_id
+
     private
 
     def balance_integrity
