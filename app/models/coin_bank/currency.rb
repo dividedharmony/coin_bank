@@ -11,6 +11,9 @@ module CoinBank
               presence: true,
               uniqueness: { case_sensitive: false }
 
+    scope :fiat, -> { where(fiat: true) }
+    scope :crypto, -> { where(fiat: false) }
+
     def crypto?
       !fiat?
     end
