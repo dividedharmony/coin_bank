@@ -71,11 +71,13 @@ module CoinBank
       end
 
       def get_amounts_to_change(params)
-        from_amount = params.dig(:coin_bank_transaction, :from_amount)
-        to_amount = params.dig(:coin_bank_transaction, :to_amount)
-        if from_amount.nil?
+        from_amount_raw = params.dig(:coin_bank_transaction, :from_amount)
+        to_amount_raw = params.dig(:coin_bank_transaction, :to_amount)
+        from_amount = from_amount_raw.to_d
+        to_amount = to_amount_raw.to_d
+        if from_amount_raw.nil?
           Failure("Please specify an amount to withdraw from the 'From Balance'.")
-        elsif to_amount.nil?
+        elsif to_amount_raw.nil?
           Failure("Please specify an amount to add to the 'To Balance'.")
         elsif from_amount.zero? && to_amount.zero?
           Failure("A transaction must have an amount to add or subtract from one balance or another.")
