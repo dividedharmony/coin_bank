@@ -16,6 +16,7 @@
 
 require 'vcr'
 require 'webmock'
+require 'test_helpers/devise_request_helper'
 
 VCR.configure do |c|
   c.cassette_library_dir     = 'spec/cassettes'
@@ -102,4 +103,8 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+  # Devise offers helpers, but they do not work for request specs.
+  # Our custom helper for request specs:
+  config.include TestHelpers::DeviseRequestHelper, type: :request
 end
