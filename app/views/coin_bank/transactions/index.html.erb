@@ -1,0 +1,38 @@
+<main>
+  <h1>
+    Transactions#index
+  </h1>
+
+  <% if @transactions.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>transacted_at</th>
+          <th>From Currency</th>
+          <th>Previous Balance</th>
+          <th>Amount Withdrawn</th>
+          <th>Resultant Balance</th>
+          <th>To Currency</th>
+          <th>Previous Balance</th>
+          <th>Amount Deposited</th>
+          <th>Resultant Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @transactions.each do |trans| %>
+          <td><%= trans.transacted_at %></td>
+          <td><%= trans.from_currency.name %></td>
+          <td><%= trans.from_before_balance.amount %></td>
+          <td><%= trans.from_amount %></td>
+          <td><%= trans.from_after_balance.amount %></td>
+          <td><%= trans.to_currency.name %></td>
+          <td><%= trans.to_before_balance.amount %></td>
+          <td><%= trans.to_amount %></td>
+          <td><%= trans.to_after_balance.amount %></td>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No transactions exist yet for your account.</p>
+  <% end %>
+</main>

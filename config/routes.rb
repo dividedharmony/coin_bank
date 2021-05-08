@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   scope module: :coin_bank do
     resources :currencies, as: :coin_bank_currencies
+    resources :transactions, only: %i(new create index), as: :coin_bank_transactions
   end
 end
