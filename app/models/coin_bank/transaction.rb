@@ -18,6 +18,14 @@ module CoinBank
 
     attr_accessor :from_currency_id, :to_currency_id
 
+    def from_currency
+      from_before_balance.currency
+    end
+
+    def to_currency
+      to_before_balance.currency
+    end
+
     private
 
     def balance_integrity

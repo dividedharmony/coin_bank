@@ -82,4 +82,22 @@ RSpec.describe CoinBank::Transaction, type: :model do
       end
     end
   end
+
+  describe "#from_currency" do
+    subject { transaction.from_currency }
+
+    let(:from_before_balance) { create(:balance) }
+    let(:transaction) { create(:transaction, from_before_balance: from_before_balance) }
+
+    it { is_expected.to eq(from_before_balance.currency) }
+  end
+
+  describe "#to_currency" do
+    subject { transaction.to_currency }
+
+    let(:to_before_balance) { create(:balance) }
+    let(:transaction) { create(:transaction, to_before_balance: to_before_balance) }
+
+    it { is_expected.to eq(to_before_balance.currency) }
+  end
 end
