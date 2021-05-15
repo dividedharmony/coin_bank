@@ -5,6 +5,7 @@ module CoinBank
     has_many :balances, class_name: "CoinBank::Balance", inverse_of: :currency
     has_many :from_transactions, class_name: "CoinBank::Transaction", inverse_of: :from_currency
     has_many :to_transactions, class_name: "CoinBank::Transaction", inverse_of: :to_currency
+    has_many :fees, class_name: "CoinBank::Fee", inverse_of: :currency, dependent: :destroy
 
     validates :name,
               :symbol,

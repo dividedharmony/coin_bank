@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 2022_02_15_032118) do
     t.boolean "fiat", default: false, null: false
   end
 
+  create_table "coin_bank_fees", force: :cascade do |t|
+    t.bigint "transaction_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "currency_id", null: false
+    t.decimal "amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["currency_id"], name: "index_coin_bank_fees_on_currency_id"
+    t.index ["transaction_id"], name: "index_coin_bank_fees_on_transaction_id"
+    t.index ["user_id"], name: "index_coin_bank_fees_on_user_id"
+  end
+
   create_table "coin_bank_transactions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "from_currency_id", null: false
@@ -70,6 +82,9 @@ ActiveRecord::Schema.define(version: 2022_02_15_032118) do
 
   add_foreign_key "coin_bank_balances", "coin_bank_currencies", column: "currency_id"
   add_foreign_key "coin_bank_balances", "coin_bank_users", column: "user_id"
+  add_foreign_key "coin_bank_fees", "coin_bank_currencies", column: "currency_id"
+  add_foreign_key "coin_bank_fees", "coin_bank_transactions", column: "transaction_id"
+  add_foreign_key "coin_bank_fees", "coin_bank_users", column: "user_id"
   add_foreign_key "coin_bank_transactions", "coin_bank_currencies", column: "from_currency_id"
   add_foreign_key "coin_bank_transactions", "coin_bank_currencies", column: "to_currency_id"
   add_foreign_key "coin_bank_transactions", "coin_bank_users", column: "user_id"

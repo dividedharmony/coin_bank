@@ -5,6 +5,7 @@ module CoinBank
     belongs_to :user, class_name: "CoinBank::User", inverse_of: :transactions
     belongs_to :from_currency, class_name: "CoinBank::Currency", inverse_of: :from_transactions
     belongs_to :to_currency, class_name: "CoinBank::Currency", inverse_of: :to_transactions
+    has_many :fees, class_name: "CoinBank::Fee", inverse_of: :cb_transaction, dependent: :destroy
 
     validates :transacted_at, presence: true
     validates :from_amount,

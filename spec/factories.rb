@@ -39,4 +39,11 @@ FactoryBot.define do
     to_amount { 6.28 }
     exchange_rate { 2 }
   end
+
+  factory :fee, class: CoinBank::Fee do
+    user
+    transaction
+    currency
+    amount { 1.23 }
+  end
 end
