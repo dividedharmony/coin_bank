@@ -8,5 +8,7 @@ module CoinBank
                foreign_key: :transaction_id
     belongs_to :user, class_name: "CoinBank::User", inverse_of: :fees
     belongs_to :currency, class_name: "CoinBank::Currency", inverse_of: :fees
+
+    validates :amount, numericality: { greater_than: 0 }
   end
 end

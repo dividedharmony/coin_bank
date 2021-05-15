@@ -42,7 +42,7 @@ FactoryBot.define do
 
   factory :fee, class: CoinBank::Fee do
     user
-    transaction
+    cb_transaction { association :transaction }
     currency
     amount { 1.23 }
   end

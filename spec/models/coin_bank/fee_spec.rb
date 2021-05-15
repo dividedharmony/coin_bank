@@ -10,6 +10,8 @@ RSpec.describe CoinBank::Fee do
   end
 
   describe "validations" do
-    it { is_expected.to validate_numericality_of(:amount).greater_than(0) }
+    subject { build(:fee) }
+
+    it { is_expected.to validate_numericality_of(:amount).is_greater_than(0) }
   end
 end
