@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2022_02_15_032118) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "fiat", default: false, null: false
+    t.index ["slug"], name: "index_coin_bank_currencies_on_slug"
+    t.index ["symbol"], name: "index_coin_bank_currencies_on_symbol"
   end
 
   create_table "coin_bank_fees", force: :cascade do |t|
