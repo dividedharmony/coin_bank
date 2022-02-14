@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=NOTREALSYMBOL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Apr 2021 11:09:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2cd48bb7ad372624532f0f2a1381a5981618571394; expires=Sun, 16-May-21
+        11:09:54 GMT; path=/; domain=.coinmarketcap.com; HttpOnly; SameSite=Lax; Secure
+      Vary:
+      - origin
+      Cache-Control:
+      - no-cache
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '097bf8971e000074ab8e0df000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 640cf6d1cb5274ab-IAD
+    body:
+      encoding: UTF-8
+      string: '{"status":{"timestamp":"2021-04-16T11:09:54.873Z","error_code":400,"error_message":"Invalid
+        value for \"symbol\": \"NOTREALSYMBOL\"","elapsed":0,"credit_count":0,"notice":null}}'
+  recorded_at: Fri, 16 Apr 2021 11:09:54 GMT
+recorded_with: VCR 6.0.0

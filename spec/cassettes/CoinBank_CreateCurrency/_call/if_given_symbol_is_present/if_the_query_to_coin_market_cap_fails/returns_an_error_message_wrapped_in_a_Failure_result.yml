@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=NOTREALSYMBOL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 14 Feb 2022 15:48:14 GMT
+      Server:
+      - Tengine
+      Cache-Control:
+      - no-cache
+      X-Envoy-Decorator-Operation:
+      - coinmarketcap-pro-apis.sandbox.svc.cluster.local:80/*
+      X-Envoy-Upstream-Service-Time:
+      - '1'
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis-sandbox
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Vary:
+      - origin,accept-encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8e7c396366d89944c10dfabcfcb15b3c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-C2
+      X-Amz-Cf-Id:
+      - f0NxK_vSwabl1F-k1NblCahwcKphZnB5y_6CEg2JKU1UZ7MJ0QEFHQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":{"timestamp":"2022-02-14T15:48:14.532Z","error_code":0,"error_message":null,"elapsed":0,"credit_count":1,"notice":null},"data":{"NOTREALSYMBOL":{"urls":{"website":["4k0ddrf5ly","orvzwgdknjk","qv58c9k2r3","666k75oshfk","x3xms7tqsj","c52semmavaw","9aen0eat49h","ybyotgq35i","fu3j30k5yd","h0zeevp1q3k"],"technical_doc":["0utwh7qg20i","tzmafy4stmr","s1v5kbv0ras","ks2hdi94z7","cvkxuboepa","z0b7vd7bkgq","eya6kwcq9y8","8okou3novbt","90jwmkkplya","v6e75sg0lti"],"twitter":[],"reddit":["a0vd2efdh","max5utjubv","3mpj5og7v8x","yxkanie7tei","7ebfg7mldr5","8ucqxpj7yqc","59cpf3j34px","cncbmzrlmhm","dz3579u0qb4","ny5kqzbc3a"],"message_board":["q0sy8o7cakh","mehbd5svekq","bgvztoyagoo","ynp71j9kw1","mo8h4b8l3fm","0nbxrpvyp7e","qkun2q4u6l","v3jyd2gles","y6d265vjzb","l10mi0hcc2g"],"announcement":[],"chat":[],"explorer":["51dsdxdla","8jhed5seuek","4sl8izsqgy5","o21uvgy31d8","g7wq414qi8","xcv0rwxejz","ycgq9b8mtol","htuvi3d67m9","wostftsbhl","297t809s046"],"source_code":["47ohw7w84ls","b0n58j9btl","6ra8hrif63","a7z0iolet4a","12e4f2d5ryvn","1na43tn3c01","4ls4rfyrnzl","ghcds4mtzv5","lyjqxajco9b","texdi9zwtae"]},"logo":"mb0651mx18b","id":6270,"name":"zym94qaey6c","symbol":"NOTREALSYMBOL","slug":"snpqk17nbq","description":"tggkli4c1w","date_added":"2022-02-14T15:48:14.532Z","tags":["5ecpc6wkl5d","2l0q5djtbl5","8r72c7z93rs","lzmoaa1rsde","b2l5t8day69","dgp5t3yuwlr","2jd95ojuntf","0qiv8741phb8","i6gsdaz1zhj","7c9lmghtsma"],"platform":null,"category":"d4whu4722g"}}}'
+  recorded_at: Mon, 14 Feb 2022 15:48:14 GMT
+- request:
+    method: get
+    uri: https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=JUNK%C3%89%C3%89%20DATA%20THAT%20SHOULD%20C%C3%82USE%20ERRORS
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '198'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 14 Feb 2022 15:51:19 GMT
+      Server:
+      - Tengine
+      Cache-Control:
+      - no-cache
+      X-Envoy-Decorator-Operation:
+      - coinmarketcap-pro-apis.sandbox.svc.cluster.local:80/*
+      X-Envoy-Upstream-Service-Time:
+      - '1'
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis-sandbox
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Vary:
+      - origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 5301cc544de32ec737d1069c11f7df30.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-C2
+      X-Amz-Cf-Id:
+      - FPo-AbiMkEQnAW5z0M9ZW97RO_nPrNDpsOvQE9gIrYH1PILufieghw==
+    body:
+      encoding: UTF-8
+      string: '{"status":{"timestamp":"2022-02-14T15:51:19.935Z","error_code":400,"error_message":"\"symbol\"
+        should only include comma-separated alphanumeric cryptocurrency symbols","elapsed":0,"credit_count":0}}'
+  recorded_at: Mon, 14 Feb 2022 15:51:19 GMT
+- request:
+    method: get
+    uri: https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=NOT%20REAL%20SYMBOL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '198'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 14 Feb 2022 15:52:09 GMT
+      Server:
+      - Tengine
+      Cache-Control:
+      - no-cache
+      X-Envoy-Decorator-Operation:
+      - coinmarketcap-pro-apis.sandbox.svc.cluster.local:80/*
+      X-Envoy-Upstream-Service-Time:
+      - '1'
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis-sandbox
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Vary:
+      - origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 326fd0f07e6ce3b75fa751c6965f21c8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-C2
+      X-Amz-Cf-Id:
+      - t5PTyKMd9S_aVzhwrhGEgD8gNaxTFiAGJEsFB-eq42ny1ZtSyuzqSw==
+    body:
+      encoding: UTF-8
+      string: '{"status":{"timestamp":"2022-02-14T15:52:09.584Z","error_code":400,"error_message":"\"symbol\"
+        should only include comma-separated alphanumeric cryptocurrency symbols","elapsed":0,"credit_count":0}}'
+  recorded_at: Mon, 14 Feb 2022 15:52:09 GMT
+recorded_with: VCR 6.0.0
