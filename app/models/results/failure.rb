@@ -7,6 +7,11 @@ module Results
         super
       end
     end
+    class InvalidOrReturnValue < StandardError
+      def initialize(msg='Return value for Failure#or block must be a Results::Base instance')
+        super
+      end
+    end
 
     def status
       FAILURE_STATUS
@@ -25,6 +30,13 @@ module Results
     end
 
     def or
+      outcome = yield
+      raise InvalidOrReturnValue unless outcome.is_a?(Results::Base)
+
+      outcome
+    end
+
+    def or_map
       yield
     end
   end

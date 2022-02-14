@@ -36,5 +36,9 @@ module Results
     def or
       raise NotImplementedError, "#{self.class.name} has not implemented a #or method"
     end
+
+    def or_map
+      raise NotImplementedError, "#{self.class.name} has not implemented a #or_map method"
+    end
   end
 end

@@ -2,6 +2,12 @@
 
 module Results
   class Success < Base
+    class InvalidBindReturnValue < StandardError
+      def initialize(msg='Return value for Success#bind block must be a Results::Base instance')
+        super
+      end
+    end
+
     def status
       SUCCESS_STATUS
     end
@@ -11,9 +17,10 @@ module Results
     end
 
     def bind
-      yield object
+      outcome = yield object
+      raise InvalidBindReturnValue unless outcome.is_a?(Results::Base)
 
-      self
+      outcome
     end
 
     def fmap
@@ -21,6 +28,10 @@ module Results
     end
 
     def or
+      self
+    end
+
+    def or_map
       object
     end
   end

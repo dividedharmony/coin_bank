@@ -18,15 +18,35 @@ RSpec.describe Results::Success do
   end
 
   describe '#bind' do
-    it 'yields the result object' do
-      expect { |e| success_result.bind(&e) }.to yield_with_args('result object')
+    context 'if given block return value is not a Result class' do
+      it 'raises an error' do
+        expect do
+          success_result.bind { |obj| "Not a valid return value: #{obj}" }
+        end.to raise_error(
+          Results::Success::InvalidBindReturnValue,
+          'Return value for Success#bind block must be a Results::Base instance'
+        )
+      end
     end
 
-    it 'returns itself' do
-      outcome = success_result.bind do |string|
-        "Discarded: #{string}"
+    context 'if given block return value is a Success' do
+      it 'returns the given success' do
+        outcome = success_result.bind do |string|
+          Results::Success.new(object: "New value from: #{string}", message: nil)
+        end
+        expect(outcome).to be_success
+        expect(outcome.value!).to eq('New value from: result object')
       end
-      expect(outcome).to eq(success_result)
+    end
+
+    context 'if given block return value is a Failure' do
+      it 'returns the given failure' do
+        outcome = success_result.bind do |string|
+          Results::Failure.new(object: nil, message: "Failure from: #{string}")
+        end
+        expect(outcome).to be_failure
+        expect(outcome.message).to eq('Failure from: result object')
+      end
     end
   end
 
@@ -46,6 +66,16 @@ RSpec.describe Results::Success do
   describe '#or' do
     subject { success_result.or }
     
+    it { is_expected.to eq(success_result) }
+
+    it 'does not yield' do
+      expect { |e| success_result.or(&e) }.not_to yield_control
+    end
+  end
+
+  describe '#or_map' do
+    subject { success_result.or_map }
+
     it { is_expected.to eq('result object') }
 
     it 'does not yield' do

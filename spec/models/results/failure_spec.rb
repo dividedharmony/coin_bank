@@ -49,8 +49,47 @@ RSpec.describe Results::Failure do
   end
 
   describe '#or' do
+    context 'if given block return value is not a Result class' do
+      it 'raises an error' do
+        expect do
+          failure_result.or { 'Not a valid return value' }
+        end.to raise_error(
+          Results::Failure::InvalidOrReturnValue,
+          'Return value for Failure#or block must be a Results::Base instance'
+        )
+      end
+    end
+
+    context 'if given block return value is a Success' do
+      it 'returns the given success' do
+        outcome = failure_result.or do
+          Results::Success.new(object: 'New value', message: nil)
+        end
+        expect(outcome).to be_success
+        expect(outcome.value!).to eq('New value')
+      end
+    end
+
+    context 'if given block return value is a Failure' do
+      it 'returns the given failure' do
+        outcome = failure_result.or do
+          Results::Failure.new(object: nil, message: 'New message')
+        end
+        expect(outcome).to be_failure
+        expect(outcome.message).to eq('New message')
+      end
+    end
+  end
+
+  describe '#or_map' do
     it 'yields control' do
-      expect { |e| failure_result.or(&e) }.to yield_control
+      expect { |e| failure_result.or_map(&e) }.to yield_control
+    end
+
+    it 'returns the yield value' do
+      expect(
+        failure_result.or_map { 'or block return value' }
+      ).to eq('or block return value')
     end
   end
 end
