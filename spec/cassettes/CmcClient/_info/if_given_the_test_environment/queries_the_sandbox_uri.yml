@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=BTC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Apr 2021 02:26:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d9af05755660c545e69ad7e48462244061618453618; expires=Sat, 15-May-21
+        02:26:58 GMT; path=/; domain=.coinmarketcap.com; HttpOnly; SameSite=Lax; Secure
+      Vary:
+      - origin,accept-encoding
+      Cache-Control:
+      - no-cache
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0974f3765100005d922a12d000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6401bb6a19d75d92-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":{"timestamp":"2021-04-15T02:26:58.313Z","error_code":0,"error_message":null,"elapsed":5,"credit_count":1,"notice":null},"data":{"BTC":{"urls":{"website":["https://bitcoin.org/"],"technical_doc":["https://bitcoin.org/bitcoin.pdf"],"twitter":[],"reddit":["https://reddit.com/r/bitcoin"],"message_board":["https://bitcointalk.org"],"announcement":[],"chat":[],"explorer":["https://blockchain.coinmarketcap.com/chain/bitcoin","https://blockchain.info/","https://live.blockcypher.com/btc/","https://blockchair.com/bitcoin","https://explorer.viabtc.com/btc"],"source_code":["https://github.com/bitcoin/"]},"logo":"https://s2.coinmarketcap.com/static/img/coins/64x64/1.png","id":1,"name":"Bitcoin","symbol":"BTC","slug":"bitcoin","description":"Bitcoin
+        (BTC) is a consensus network that enables a new payment system and a completely
+        digital currency. Powered by its users, it is a peer to peer payment network
+        that requires no central authority to operate. On October 31st, 2008, an individual
+        or group of individuals operating under the pseudonym \"Satoshi Nakamoto\"
+        published the Bitcoin Whitepaper and described it as: \"a purely peer-to-peer
+        version of electronic cash, which would allow online payments to be sent directly
+        from one party to another without going through a financial institution.\"","notice":null,"date_added":"2013-04-28T00:00:00.000Z","tags":["mineable"],"date_launched":null,"platform":null,"category":"coin"}}}'
+  recorded_at: Thu, 15 Apr 2021 02:26:58 GMT
+recorded_with: VCR 6.0.0

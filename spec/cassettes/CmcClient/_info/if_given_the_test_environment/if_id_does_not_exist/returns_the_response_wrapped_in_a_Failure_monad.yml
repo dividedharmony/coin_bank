@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=SUPER_FAKE_SYMBOL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      X-Cmc-Pro-Api-Key:
+      - b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Apr 2021 02:26:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '198'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d26fe10942af432c4b200e25aecf165151618453618; expires=Sat, 15-May-21
+        02:26:58 GMT; path=/; domain=.coinmarketcap.com; HttpOnly; SameSite=Lax; Secure
+      Vary:
+      - origin
+      Cache-Control:
+      - no-cache
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0974f376eb00005dbce3a2f000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6401bb6b1c875dbc-IAD
+    body:
+      encoding: UTF-8
+      string: '{"status":{"timestamp":"2021-04-15T02:26:58.438Z","error_code":400,"error_message":"\"symbol\"
+        should only include comma-separated alphanumeric cryptocurrency symbols","elapsed":0,"credit_count":0}}'
+  recorded_at: Thu, 15 Apr 2021 02:26:58 GMT
+recorded_with: VCR 6.0.0
