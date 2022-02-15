@@ -18,8 +18,10 @@ module CoinbaseIntegration
         output.puts 'Finished retrieving from api...'
         return fail!('No transactions to import') if temp_transactions.empty?
         
-        succeed!(temp_transactions)
+        succeed!(self)
       end
+
+      delegate :values, to: :temp_transactions
 
       private
 
