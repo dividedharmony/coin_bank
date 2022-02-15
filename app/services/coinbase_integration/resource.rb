@@ -16,7 +16,7 @@ module CoinbaseIntegration
     end
 
     def pagination
-      body["pagination"]
+      body.fetch('pagination', {})
     end
 
     def errors
