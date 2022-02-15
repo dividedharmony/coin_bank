@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module CoinbaseIntegration
-  module Import
+  module Query
     class AllTransactions
       include Results::Methods
 
