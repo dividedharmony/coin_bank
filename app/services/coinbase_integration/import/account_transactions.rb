@@ -2,7 +2,7 @@
 
 module CoinbaseIntegration
   module Import
-    class Transactions
+    class AccountTransactions
       include Results::Methods
   
       def initialize(output, account_id)

@@ -3,20 +3,22 @@
 module CoinbaseIntegration
   module Import
     class AllTransactions
-      def initialize(output: STDOUT)
+      include Results::Methods
+
+      def initialize(output)
         @output = output
         @client = Client.new
         @account_importer = Accounts.new(output)
         @temp_transactions = {}
       end
 
-      def call
+      def retrieve
         output.puts 'Beginning import...'
         retrieve_resources_from_api
         output.puts 'Finished retrieving from api...'
         return fail!('No transactions to import') if temp_transactions.empty?
-
-        # TODO save temp transactions
+        
+        succeed!(temp_transactions)
       end
 
       private
@@ -38,7 +40,7 @@ module CoinbaseIntegration
       end
 
       def query_transactions(account_id)
-        Transactions.new(output, account_id).retrieve
+        AccountTransactions.new(output, account_id).retrieve
       end
     end
   end
