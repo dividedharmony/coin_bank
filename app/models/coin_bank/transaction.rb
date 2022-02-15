@@ -7,10 +7,18 @@ module CoinBank
     belongs_to :to_currency, class_name: "CoinBank::Currency", inverse_of: :to_transactions
     has_many :fees, class_name: "CoinBank::Fee", inverse_of: :cb_transaction, dependent: :destroy
 
+    accepts_nested_attributes_for :fees, reject_if: :empty_fee?
+
     validates :transacted_at, presence: true
     validates :from_amount,
               :to_amount,
               :exchange_rate,
               numericality: true
+
+    private
+
+    def empty_fee?(fee_attr)
+      fee_attr['amount'].blank? || (fee_attr['amount'].to_d <= 0)
+    end
   end
 end
