@@ -5,6 +5,8 @@ require "rails_helper"
 RSpec.describe CoinBank::Currency do
   describe "associations" do
     it { is_expected.to have_many(:balances).class_name("CoinBank::Balance") }
+    it { is_expected.to have_many(:from_transactions).class_name("CoinBank::Transaction") }
+    it { is_expected.to have_many(:to_transactions).class_name("CoinBank::Transaction") }
   end
 
   describe "validations" do

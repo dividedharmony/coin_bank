@@ -29,4 +29,14 @@ FactoryBot.define do
     user
     currency
   end
+
+  factory :transaction, class: CoinBank::Transaction do
+    user
+    association :from_currency, factory: :currency
+    association :to_currency, factory: :currency
+    transacted_at { 3.days.ago }
+    from_amount { 3.14 }
+    to_amount { 6.28 }
+    exchange_rate { 2 }
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_044939) do
+ActiveRecord::Schema.define(version: 2022_02_15_032118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(version: 2021_04_27_044939) do
     t.boolean "fiat", default: false, null: false
   end
 
+  create_table "coin_bank_transactions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "from_currency_id", null: false
+    t.decimal "from_amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.bigint "to_currency_id", null: false
+    t.decimal "to_amount", precision: 20, scale: 10, default: "0.0", null: false
+    t.decimal "exchange_rate", precision: 20, scale: 10, default: "0.0", null: false
+    t.datetime "transacted_at", null: false
+    t.string "coinbase_uuid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coinbase_uuid"], name: "index_coin_bank_transactions_on_coinbase_uuid"
+    t.index ["from_currency_id"], name: "index_coin_bank_transactions_on_from_currency_id"
+    t.index ["to_currency_id"], name: "index_coin_bank_transactions_on_to_currency_id"
+    t.index ["user_id"], name: "index_coin_bank_transactions_on_user_id"
+  end
+
   create_table "coin_bank_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,4 +70,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_044939) do
 
   add_foreign_key "coin_bank_balances", "coin_bank_currencies", column: "currency_id"
   add_foreign_key "coin_bank_balances", "coin_bank_users", column: "user_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_currencies", column: "from_currency_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_currencies", column: "to_currency_id"
+  add_foreign_key "coin_bank_transactions", "coin_bank_users", column: "user_id"
 end

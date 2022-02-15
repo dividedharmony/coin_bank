@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe CoinBank::User, type: :model do
   describe "associations" do
     it { is_expected.to have_many(:balances).class_name("CoinBank::Balance") }
+    it { is_expected.to have_many(:transactions).class_name("CoinBank::Transaction") }
 
     describe "#current_balances" do
       subject { user.current_balances }
