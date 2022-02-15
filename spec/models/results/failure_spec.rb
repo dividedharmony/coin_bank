@@ -72,18 +72,18 @@ RSpec.describe Results::Failure do
 
     context 'if given block return value is a Failure' do
       it 'returns the given failure' do
-        outcome = failure_result.or do
-          Results::Failure.new(object: nil, message: 'New message')
+        outcome = failure_result.or do |old_message|
+          Results::Failure.new(object: nil, message: "New message/#{old_message}")
         end
         expect(outcome).to be_failure
-        expect(outcome.message).to eq('New message')
+        expect(outcome.message).to eq('New message/failure message')
       end
     end
   end
 
   describe '#or_map' do
     it 'yields control' do
-      expect { |e| failure_result.or_map(&e) }.to yield_control
+      expect { |e| failure_result.or_map(&e) }.to yield_with_args('failure message')
     end
 
     it 'returns the yield value' do

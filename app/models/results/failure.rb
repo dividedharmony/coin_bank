@@ -30,14 +30,14 @@ module Results
     end
 
     def or
-      outcome = yield
+      outcome = yield message
       raise InvalidOrReturnValue unless outcome.is_a?(Results::Base)
 
       outcome
     end
 
     def or_map
-      yield
+      yield message
     end
   end
 end
