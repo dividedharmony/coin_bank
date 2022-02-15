@@ -8,7 +8,7 @@ module CoinbaseIntegration
       def initialize(output)
         @output = output
         @client = Client.new
-        @account_importer = Accounts.new(output)
+        @account_importer = Query::Accounts.new(output)
         @temp_transactions = {}
       end
 
