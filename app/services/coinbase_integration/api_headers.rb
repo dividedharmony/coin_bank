@@ -7,7 +7,7 @@ require 'json'
 # Modified from CoinBase docs:
 # https://docs.pro.coinbase.com/?ruby#creating-a-request
 module CoinbaseIntegration
-  class ApiObject
+  class ApiHeaders
     # All API calls should be made with a CB-VERSION
     # header which guarantees that your call is using
     # the correct API version. Version is passed in as
@@ -23,7 +23,7 @@ module CoinbaseIntegration
       @method = method
     end
 
-    def headers
+    def to_h
       {
         "CB-ACCESS-KEY" => key,
         "CB-ACCESS-SIGN" => signature,

@@ -34,10 +34,10 @@ module CoinbaseIntegration
 
     def request(simple_path, params: {})
       request_path = path_with_params(simple_path, params)
-      headers = ApiObject.new(
+      headers = ApiHeaders.new(
         request_path: request_path,
         body: nil
-      ).headers
+      ).to_h
       response = Faraday.get(
         uri(request_path),
         nil,
