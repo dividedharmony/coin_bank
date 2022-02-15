@@ -2,19 +2,32 @@
 
 module CoinbaseIntegration
   class Currencies
+    class CouldNotFindOrCreate < StandardError
+      def initialize(currency_symbol)
+        super("Could not find or create currency with symbol '#{currency_symbol}'")
+      end
+    end
+
     include Results::Methods
 
-    def initialize
+    def initialize(*currency_records)
       @stored_currencies = {}
+      currency_records.each do |currency|
+        stored_currencies[currency.symbol] = currency
+      end
     end
 
     def fetch(currency_symbol)
-      get_currency(currency_symbol)
+      find_or_create.or do
+        raise CouldNotFindOrCreate, currency_symbol
+      end
     end
 
-    def [](currency_symbol)
+    def find_or_create(currency_symbol)
       get_currency(currency_symbol).or { create_currency(currency_symbol) }
     end
+
+    alias_method :[], :find_or_create
 
     private
 
