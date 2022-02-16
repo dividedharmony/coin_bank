@@ -247,7 +247,7 @@ RSpec.describe CoinbaseIntegration::Query::AllTransactions do
               }
             )
             expect(mock_output).to have_received(:puts).with(
-              'Beginning import...'
+              'Iterating through account transactions...'
             )
             expect(mock_output).to have_received(:puts).with(
               'Finished retrieving from api...'

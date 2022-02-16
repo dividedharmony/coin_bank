@@ -14,7 +14,7 @@ module CoinbaseIntegration
       end
 
       def retrieve
-        output.puts 'Beginning import...'
+        output.puts 'Iterating through account transactions...'
         account_importer.retrieve.bind do |accounts|
           store_transactions_from(accounts)
         end.bind do
