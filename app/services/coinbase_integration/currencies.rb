@@ -4,7 +4,7 @@ module CoinbaseIntegration
   class Currencies
     class CouldNotFindOrCreate < StandardError
       def initialize(currency_symbol)
-        super("Could not find or create currency with symbol '#{currency_symbol}'")
+        super("Could not find or create currency with symbol #{currency_symbol.inspect}")
       end
     end
 
