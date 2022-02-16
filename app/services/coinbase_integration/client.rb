@@ -24,10 +24,6 @@ module CoinbaseIntegration
       request("/v2/trades")
     end
 
-    def trade(trade_uuid)
-      request("/v2/trades/#{trade_uuid}")
-    end
-
     # private
 
     attr_reader :base_uri
