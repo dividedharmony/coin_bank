@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coinbase.com/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Cb-Access-Key:
+      - "<COINBASE_API_KEY>"
+      Cb-Access-Sign:
+      - 6767bd31218ab52a07e813f3f7a9ec96a9b181c68b12bc9d5347e20d34bf5e1e
+      Cb-Access-Timestamp:
+      - '1644985625'
+      Cb-Version:
+      - '2021-03-31'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Feb 2022 04:27:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Content-Disposition:
+      - attachment; filename=response.json
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.coinbase.com; child-src ''self'' https://www.coinbase.com
+        https://fast.wistia.net https://*.online-metrix.net https://*.wpstn.com https://netverify.com
+        https://platform.twitter.com https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/
+        https://cdn.plaid.com/link/ https://*.doubleclick.net/ blob:; connect-src
+        ''self'' https://www.coinbase.com https://api.coinbase.com https://*.online-metrix.net
+        https://api.cloudinary.com https://ott9.wpstn.com/live https://api.amplitude.com/
+        https://api2.amplitude.com/ https://d3907m2cqladbn.cloudfront.net/ https://exceptions.coinbase.com
+        https://assets.coinbase.com/ https://sessions.coinbase.com/ https://dynamic-assets.coinbase.com/
+        https://events-service.coinbase.com/amp static.coinbase.com wss://ws.coinbase.com
+        wss://ws.coinbase.com:443 https://www.coinbase.com/api; font-src ''self''
+        https://www.coinbase.com https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; img-src ''self'' data: https://www.coinbase.com https://images.coinbase.com
+        https://d3907m2cqladbn.cloudfront.net/ https://static-assets.coinbase.com/
+        https://dynamic-assets.coinbase.com/ https://exceptions.coinbase.com https://coinbase-uploads.s3.amazonaws.com
+        https://s3.amazonaws.com/app-public/ https://maps.gstatic.com https://ssl.google-analytics.com
+        https://www.google.com https://maps.googleapis.com https://csi.gstatic.com
+        https://www.google-analytics.com https://res.cloudinary.com https://secure.gravatar.com
+        https://i2.wp.com https://*.online-metrix.net https://assets.coinbase.com/
+        https://hexagon-analytics.com https://cb-brand.s3.amazonaws.com https://googleads.g.doubleclick.net
+        https://stats.g.doubleclick.net/r/collect https://card.coinbase.com/ blob:
+        static.coinbase.com https://www.facebook.com/tr; media-src ''self'' https://www.coinbase.com
+        blob:; object-src ''self'' data: blob: https://www.coinbase.com https://cdn.siftscience.com
+        https://*.online-metrix.net https://www.gstatic.com https://www.google.com/recaptcha/api/
+        https://recaptcha.net/recaptcha/; script-src ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https://www.coinbase.com https://fast.wistia.com/assets/external/E-v1.js https://cdn.siftscience.com
+        https://*.google-analytics.com https://www.google.com https://www.gstatic.com
+        https://*.online-metrix.net https://code.jquery.com https://chart.googleapis.com
+        https://maps.googleapis.com https://maps.gstatic.com https://netverify.com
+        https://ajax.cloudflare.com https://cdn.plaid.com/link/v2/stable/ https://www.googletagmanager.com/gtag/js
+        https://www.googletagmanager.com/gtm.js https://www.googleadservices.com https://googleads.g.doubleclick.net
+        https://recaptcha.net https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; style-src ''self'' ''unsafe-inline'' https://www.coinbase.com
+        https://assets.coinbase.com/ https://card.coinbase.com/ static.coinbase.com;
+        report-uri /csp-report'
+      Etag:
+      - W/"6900b0d864d2ed72e1128927b5039452"
+      Expect-Ct:
+      - enforce, max-age=86400, report-uri="https://coinbase.report-uri.io/r/default/ct/reportOnly"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - __cf_bm=pxH.pFcpy20CpclqzmsJY7o7OaDqkP5Lw._3zf9U078-1644985626-0-AVxfQpgsl5L83Cnh+piO3CAsihH3Mktg43nkuY6IZgrHogDgfqXXomXTTGxAAr53OmW6PzNxTHDMR5JwikqBDTs=;
+        path=/; expires=Wed, 16-Feb-22 04:57:06 GMT; domain=.coinbase.com; HttpOnly;
+        Secure; SameSite=None
+      - _coinbase_session=Snk5UkNkWERZb3NVS25Id00vM3hGNzFOTy9pN09rWUg4ZmRMRE45QzZVUmNLa1ZISVQ2T0UxT0pYN2RFZk1ONHBKeDdBU2dJQnhqYVZySGpBZUdKS0lKY3BTZXNDODBQTXIzdC9OdHF3Q2gwbW1NamZROTBxTnZiVHNZOG5Dc2ctLWtmWFpFOHltL3NlbDhRQTRqTU5rakE9PQ%3D%3D--24ce3a0c66a6707a37f5343ee713fe8c911678a8;
+        path=/; secure; HttpOnly
+      - amplitude_device_id=22cd3769-0c33-4720-af50-055f1e46f1c1; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:27:05 GMT; secure; SameSite=Lax
+      - cb_dm=0652513d-8de0-4659-8019-09faab157613; Path=/; Domain=coinbase.com; Expires=Mon,
+        16 Feb 2032 04:27:05 GMT; HttpOnly; Secure
+      - coinbase_device_id=22cd3769-0c33-4720-af50-055f1e46f1c1; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:27:05 GMT; secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Trace-Id:
+      - '8805139445969341851'
+      Vary:
+      - Origin,Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Proof-of-Work
+      X-Request-Id:
+      - 87e3aa3a-2c4f-4b22-94c5-76c76993d07f
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6de4057e0a4ee861-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"b46dacc9-7387-5abe-a3e5-3a9e057b1a69","type":"trade","status":"completed","amount":{"amount":"0.00528336","currency":"MKR"},"native_amount":{"amount":"19.28","currency":"USD"},"description":null,"created_at":"2021-05-19T12:17:38Z","updated_at":"2021-05-19T12:17:39Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/b46dacc9-7387-5abe-a3e5-3a9e057b1a69","instant_exchange":false,"trade":{"id":"329cb0dc-737c-5556-bff7-d5d7f2de0bd2","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/329cb0dc-737c-5556-bff7-d5d7f2de0bd2"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00528336 MKR
+        ($19.28)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"d6366a08-3a13-5cf4-ae8e-5c423fdab6a8","type":"trade","status":"completed","amount":{"amount":"0.00138017","currency":"MKR"},"native_amount":{"amount":"6.86","currency":"USD"},"description":null,"created_at":"2021-05-18T11:30:02Z","updated_at":"2021-05-18T11:30:03Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/d6366a08-3a13-5cf4-ae8e-5c423fdab6a8","instant_exchange":false,"trade":{"id":"83b73da1-290c-5e4c-a04b-44f46a422bf2","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/83b73da1-290c-5e4c-a04b-44f46a422bf2"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00138017 MKR
+        ($6.86)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"959a11aa-6ac5-52a7-afb5-287a67f1741b","type":"trade","status":"completed","amount":{"amount":"0.00270175","currency":"MKR"},"native_amount":{"amount":"11.35","currency":"USD"},"description":null,"created_at":"2021-05-17T18:57:36Z","updated_at":"2021-05-17T18:57:38Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/959a11aa-6ac5-52a7-afb5-287a67f1741b","instant_exchange":false,"trade":{"id":"53fddb7d-9c8f-58f7-84e0-624f82d6c165","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/53fddb7d-9c8f-58f7-84e0-624f82d6c165"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00270175 MKR
+        ($11.35)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"5da41580-2e8c-5723-b41f-e32c8b19aa33","type":"trade","status":"completed","amount":{"amount":"0.00340092","currency":"MKR"},"native_amount":{"amount":"14.75","currency":"USD"},"description":null,"created_at":"2021-05-17T05:26:01Z","updated_at":"2021-05-17T05:26:03Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/5da41580-2e8c-5723-b41f-e32c8b19aa33","instant_exchange":false,"trade":{"id":"d244e888-1918-5827-a259-6757afe4daf5","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/d244e888-1918-5827-a259-6757afe4daf5"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00340092 MKR
+        ($14.75)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"b791e1a5-df91-5192-8f31-9b73915c344f","type":"trade","status":"completed","amount":{"amount":"0.00248640","currency":"MKR"},"native_amount":{"amount":"11.77","currency":"USD"},"description":null,"created_at":"2021-05-16T14:19:57Z","updated_at":"2021-05-16T14:19:58Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/b791e1a5-df91-5192-8f31-9b73915c344f","instant_exchange":false,"trade":{"id":"f19e2c1f-13cf-5e5b-9d29-cee6b9cb8675","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/f19e2c1f-13cf-5e5b-9d29-cee6b9cb8675"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.0024864 MKR
+        ($11.77)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"8cfc1044-cb9e-5dfa-ba8a-9532efe44fe3","type":"trade","status":"completed","amount":{"amount":"0.00146338","currency":"MKR"},"native_amount":{"amount":"6.87","currency":"USD"},"description":null,"created_at":"2021-05-15T18:43:56Z","updated_at":"2021-05-15T18:43:57Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/8cfc1044-cb9e-5dfa-ba8a-9532efe44fe3","instant_exchange":false,"trade":{"id":"1fc69edc-0411-5af4-9633-443d364a1c3c","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/1fc69edc-0411-5af4-9633-443d364a1c3c"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00146338 MKR
+        ($6.87)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"c75d155b-196a-5573-8d3c-896cf8d60ac6","type":"trade","status":"completed","amount":{"amount":"0.00100662","currency":"MKR"},"native_amount":{"amount":"4.90","currency":"USD"},"description":null,"created_at":"2021-05-15T12:16:29Z","updated_at":"2021-05-15T12:16:30Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/c75d155b-196a-5573-8d3c-896cf8d60ac6","instant_exchange":false,"trade":{"id":"8bbeba27-03e9-5ceb-b4c2-8ecc50b31fd6","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/8bbeba27-03e9-5ceb-b4c2-8ecc50b31fd6"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00100662 MKR
+        ($4.90)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"ecd0c68b-6f0f-5ffe-9e5d-453edf7caa8d","type":"trade","status":"completed","amount":{"amount":"0.00095114","currency":"MKR"},"native_amount":{"amount":"4.90","currency":"USD"},"description":null,"created_at":"2021-05-14T14:29:03Z","updated_at":"2021-05-14T14:29:04Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/ecd0c68b-6f0f-5ffe-9e5d-453edf7caa8d","instant_exchange":false,"trade":{"id":"11125bf9-095f-50d2-bdf7-f1205cb04408","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/11125bf9-095f-50d2-bdf7-f1205cb04408"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00095114 MKR
+        ($4.90)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"c74cab32-d15b-5c1b-a577-c25431e5d932","type":"trade","status":"completed","amount":{"amount":"0.00146356","currency":"MKR"},"native_amount":{"amount":"6.87","currency":"USD"},"description":null,"created_at":"2021-05-13T21:32:39Z","updated_at":"2021-05-13T21:32:40Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/c74cab32-d15b-5c1b-a577-c25431e5d932","instant_exchange":false,"trade":{"id":"d8d59400-6dc2-5e60-89c6-f6c8c7368929","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/d8d59400-6dc2-5e60-89c6-f6c8c7368929"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00146356 MKR
+        ($6.87)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"12ed7f99-6094-556d-95d0-4825e5e161f3","type":"trade","status":"completed","amount":{"amount":"0.00103404","currency":"MKR"},"native_amount":{"amount":"4.89","currency":"USD"},"description":null,"created_at":"2021-05-13T10:43:49Z","updated_at":"2021-05-13T10:43:50Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/12ed7f99-6094-556d-95d0-4825e5e161f3","instant_exchange":false,"trade":{"id":"c9827240-ae9b-5bbb-88b3-8d0b23844057","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/c9827240-ae9b-5bbb-88b3-8d0b23844057"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00103404 MKR
+        ($4.89)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"2d777f01-0d92-5d5e-805d-921dfbc8fc47","type":"trade","status":"completed","amount":{"amount":"0.00138755","currency":"MKR"},"native_amount":{"amount":"6.86","currency":"USD"},"description":null,"created_at":"2021-05-13T09:35:20Z","updated_at":"2021-05-13T09:35:21Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/2d777f01-0d92-5d5e-805d-921dfbc8fc47","instant_exchange":false,"trade":{"id":"266667a7-34d3-51cf-9a6d-7b886e9bd852","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/266667a7-34d3-51cf-9a6d-7b886e9bd852"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00138755 MKR
+        ($6.86)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"d3d33611-5557-55e7-92c5-107d800f7eb5","type":"trade","status":"completed","amount":{"amount":"0.00133400","currency":"MKR"},"native_amount":{"amount":"6.84","currency":"USD"},"description":null,"created_at":"2021-05-13T04:46:30Z","updated_at":"2021-05-13T04:46:31Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/d3d33611-5557-55e7-92c5-107d800f7eb5","instant_exchange":false,"trade":{"id":"3586548b-0987-56cc-b357-0c25f457a889","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/3586548b-0987-56cc-b357-0c25f457a889"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.001334 MKR ($6.84)","health":"positive","payment_method_name":"DAI
+        Wallet"},"hide_native_amount":false},{"id":"9afe97a4-345e-57b7-89ee-5ebbf940f9f7","type":"trade","status":"completed","amount":{"amount":"0.00274412","currency":"MKR"},"native_amount":{"amount":"15.67","currency":"USD"},"description":null,"created_at":"2021-05-12T13:56:21Z","updated_at":"2021-05-12T13:56:22Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/9afe97a4-345e-57b7-89ee-5ebbf940f9f7","instant_exchange":false,"trade":{"id":"a10a57a8-c4ec-5b1a-98f1-684b5b15ac59","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/a10a57a8-c4ec-5b1a-98f1-684b5b15ac59"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00274412 MKR
+        ($15.67)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"6326810e-de0a-5a13-89d9-098f5203fe49","type":"trade","status":"completed","amount":{"amount":"0.00161512","currency":"MKR"},"native_amount":{"amount":"7.84","currency":"USD"},"description":null,"created_at":"2021-05-11T12:40:03Z","updated_at":"2021-05-11T12:40:04Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/6326810e-de0a-5a13-89d9-098f5203fe49","instant_exchange":false,"trade":{"id":"cf403e6b-8442-550e-90c3-c1c7f62d9bee","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/cf403e6b-8442-550e-90c3-c1c7f62d9bee"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00161512 MKR
+        ($7.84)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"4d0dc2a5-0911-5d2d-9e86-83d9dfebb79d","type":"trade","status":"completed","amount":{"amount":"0.00204379","currency":"MKR"},"native_amount":{"amount":"9.73","currency":"USD"},"description":null,"created_at":"2021-05-11T04:03:15Z","updated_at":"2021-05-11T04:03:17Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/4d0dc2a5-0911-5d2d-9e86-83d9dfebb79d","instant_exchange":false,"trade":{"id":"f11ea0c4-d39e-5e56-be18-c27a6a15e1f6","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/f11ea0c4-d39e-5e56-be18-c27a6a15e1f6"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00204379 MKR
+        ($9.73)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"9e6d9e4e-4df1-5dbf-a6f1-00b29496fa27","type":"trade","status":"completed","amount":{"amount":"0.00096080","currency":"MKR"},"native_amount":{"amount":"4.89","currency":"USD"},"description":null,"created_at":"2021-05-10T22:56:48Z","updated_at":"2021-05-10T22:56:50Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/9e6d9e4e-4df1-5dbf-a6f1-00b29496fa27","instant_exchange":false,"trade":{"id":"56d444cb-5fd3-5b90-904b-3295ec2be12a","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/56d444cb-5fd3-5b90-904b-3295ec2be12a"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.0009608 MKR
+        ($4.89)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"b21ba00c-0944-52e3-a8bd-3869ce20228f","type":"trade","status":"completed","amount":{"amount":"0.00131532","currency":"MKR"},"native_amount":{"amount":"6.84","currency":"USD"},"description":null,"created_at":"2021-05-10T11:04:16Z","updated_at":"2021-05-10T11:04:17Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/b21ba00c-0944-52e3-a8bd-3869ce20228f","instant_exchange":false,"trade":{"id":"4b137c1a-2d2f-50a7-97e9-54d8b19115f4","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/4b137c1a-2d2f-50a7-97e9-54d8b19115f4"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00131532 MKR
+        ($6.84)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"b43ebfea-9ec9-5395-bd1e-fc6874fc294c","type":"trade","status":"completed","amount":{"amount":"0.00364922","currency":"MKR"},"native_amount":{"amount":"19.62","currency":"USD"},"description":null,"created_at":"2021-05-10T03:05:58Z","updated_at":"2021-05-10T03:05:59Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/b43ebfea-9ec9-5395-bd1e-fc6874fc294c","instant_exchange":false,"trade":{"id":"9abdb199-88d6-5f9b-a859-f67381b97468","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/9abdb199-88d6-5f9b-a859-f67381b97468"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00364922 MKR
+        ($19.62)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"dc522f6d-35c0-56a5-ba71-e58724d71736","type":"trade","status":"completed","amount":{"amount":"0.00192234","currency":"MKR"},"native_amount":{"amount":"9.79","currency":"USD"},"description":null,"created_at":"2021-05-06T21:12:16Z","updated_at":"2021-05-06T21:12:18Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/dc522f6d-35c0-56a5-ba71-e58724d71736","instant_exchange":false,"trade":{"id":"9a1915f2-d032-58f1-8d3b-778cccdb1964","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/9a1915f2-d032-58f1-8d3b-778cccdb1964"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00192234 MKR
+        ($9.79)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"ba7a8773-1c93-53f0-88ae-5a035b8320f8","type":"trade","status":"completed","amount":{"amount":"0.00150436","currency":"MKR"},"native_amount":{"amount":"7.84","currency":"USD"},"description":null,"created_at":"2021-05-06T12:51:10Z","updated_at":"2021-05-06T12:51:11Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/ba7a8773-1c93-53f0-88ae-5a035b8320f8","instant_exchange":false,"trade":{"id":"e6701253-b254-5bbd-b116-887ca7d43656","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/e6701253-b254-5bbd-b116-887ca7d43656"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00150436 MKR
+        ($7.84)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"61916312-164d-5e2b-ab51-e456a00c3f0c","type":"trade","status":"completed","amount":{"amount":"0.00090559","currency":"MKR"},"native_amount":{"amount":"4.91","currency":"USD"},"description":null,"created_at":"2021-05-05T23:25:30Z","updated_at":"2021-05-05T23:25:31Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/61916312-164d-5e2b-ab51-e456a00c3f0c","instant_exchange":false,"trade":{"id":"b4596510-cdff-5a85-aff3-54e2632606df","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/b4596510-cdff-5a85-aff3-54e2632606df"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00090559 MKR
+        ($4.91)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"7cadc482-4c19-5a30-a099-f15738677aeb","type":"trade","status":"completed","amount":{"amount":"0.00908085","currency":"MKR"},"native_amount":{"amount":"48.93","currency":"USD"},"description":null,"created_at":"2021-05-05T19:41:57Z","updated_at":"2021-05-05T19:41:59Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/7cadc482-4c19-5a30-a099-f15738677aeb","instant_exchange":false,"trade":{"id":"d727209d-df49-51a8-a3d7-af0ecdd52523","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/d727209d-df49-51a8-a3d7-af0ecdd52523"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00908085 MKR
+        ($48.93)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"738c03c5-c15a-5e6e-820a-6b2084b415c9","type":"trade","status":"completed","amount":{"amount":"0.00090845","currency":"MKR"},"native_amount":{"amount":"4.90","currency":"USD"},"description":null,"created_at":"2021-05-05T19:41:13Z","updated_at":"2021-05-05T19:41:14Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/738c03c5-c15a-5e6e-820a-6b2084b415c9","instant_exchange":false,"trade":{"id":"ee3bac82-1edf-5a97-ba31-49b3403a6d5e","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/ee3bac82-1edf-5a97-ba31-49b3403a6d5e"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00090845 MKR
+        ($4.90)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"dbaa88ce-19fb-582b-9e36-93641db3a55b","type":"trade","status":"completed","amount":{"amount":"0.00091600","currency":"MKR"},"native_amount":{"amount":"4.90","currency":"USD"},"description":null,"created_at":"2021-05-05T11:58:05Z","updated_at":"2021-05-05T11:58:06Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/dbaa88ce-19fb-582b-9e36-93641db3a55b","instant_exchange":false,"trade":{"id":"72c46fcb-2de9-5ae4-909d-cfc21a5efb5a","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/72c46fcb-2de9-5ae4-909d-cfc21a5efb5a"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.000916 MKR ($4.90)","health":"positive","payment_method_name":"DAI
+        Wallet"},"hide_native_amount":false},{"id":"381ccf7f-760e-5eab-9989-3ef43a43c34a","type":"trade","status":"completed","amount":{"amount":"0.00362231","currency":"MKR"},"native_amount":{"amount":"19.61","currency":"USD"},"description":null,"created_at":"2021-05-05T01:27:28Z","updated_at":"2021-05-05T01:27:29Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/381ccf7f-760e-5eab-9989-3ef43a43c34a","instant_exchange":false,"trade":{"id":"be9c0d37-3897-5acf-84f0-069299d53e07","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/be9c0d37-3897-5acf-84f0-069299d53e07"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00362231 MKR
+        ($19.61)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false}],"pagination":{"ending_before":null,"starting_after":null,"previous_ending_before":null,"next_starting_after":"381ccf7f-760e-5eab-9989-3ef43a43c34a","limit":25,"order":"desc","previous_uri":null,"next_uri":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions?starting_after=381ccf7f-760e-5eab-9989-3ef43a43c34a"}}'
+  recorded_at: Wed, 16 Feb 2022 04:27:06 GMT
+recorded_with: VCR 6.0.0

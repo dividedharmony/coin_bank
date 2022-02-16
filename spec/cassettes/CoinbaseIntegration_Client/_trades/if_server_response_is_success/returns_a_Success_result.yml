@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coinbase.com/v2/trades
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Cb-Access-Key:
+      - "<COINBASE_API_KEY>"
+      Cb-Access-Sign:
+      - a98baae9b36fe269f72b99ab505497ad90f20242184114ab093061c2d53c7bfe
+      Cb-Access-Timestamp:
+      - '1644985888'
+      Cb-Version:
+      - '2021-03-31'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Feb 2022 04:31:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Content-Disposition:
+      - attachment; filename=response.json
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.coinbase.com; child-src ''self'' https://www.coinbase.com
+        https://fast.wistia.net https://*.online-metrix.net https://*.wpstn.com https://netverify.com
+        https://platform.twitter.com https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/
+        https://cdn.plaid.com/link/ https://*.doubleclick.net/ blob:; connect-src
+        ''self'' https://www.coinbase.com https://api.coinbase.com https://*.online-metrix.net
+        https://api.cloudinary.com https://ott9.wpstn.com/live https://api.amplitude.com/
+        https://api2.amplitude.com/ https://d3907m2cqladbn.cloudfront.net/ https://exceptions.coinbase.com
+        https://assets.coinbase.com/ https://sessions.coinbase.com/ https://dynamic-assets.coinbase.com/
+        https://events-service.coinbase.com/amp static.coinbase.com wss://ws.coinbase.com
+        wss://ws.coinbase.com:443 https://www.coinbase.com/api; font-src ''self''
+        https://www.coinbase.com https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; img-src ''self'' data: https://www.coinbase.com https://images.coinbase.com
+        https://d3907m2cqladbn.cloudfront.net/ https://static-assets.coinbase.com/
+        https://dynamic-assets.coinbase.com/ https://exceptions.coinbase.com https://coinbase-uploads.s3.amazonaws.com
+        https://s3.amazonaws.com/app-public/ https://maps.gstatic.com https://ssl.google-analytics.com
+        https://www.google.com https://maps.googleapis.com https://csi.gstatic.com
+        https://www.google-analytics.com https://res.cloudinary.com https://secure.gravatar.com
+        https://i2.wp.com https://*.online-metrix.net https://assets.coinbase.com/
+        https://hexagon-analytics.com https://cb-brand.s3.amazonaws.com https://googleads.g.doubleclick.net
+        https://stats.g.doubleclick.net/r/collect https://card.coinbase.com/ blob:
+        static.coinbase.com https://www.facebook.com/tr; media-src ''self'' https://www.coinbase.com
+        blob:; object-src ''self'' data: blob: https://www.coinbase.com https://cdn.siftscience.com
+        https://*.online-metrix.net https://www.gstatic.com https://www.google.com/recaptcha/api/
+        https://recaptcha.net/recaptcha/; script-src ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https://www.coinbase.com https://fast.wistia.com/assets/external/E-v1.js https://cdn.siftscience.com
+        https://*.google-analytics.com https://www.google.com https://www.gstatic.com
+        https://*.online-metrix.net https://code.jquery.com https://chart.googleapis.com
+        https://maps.googleapis.com https://maps.gstatic.com https://netverify.com
+        https://ajax.cloudflare.com https://cdn.plaid.com/link/v2/stable/ https://www.googletagmanager.com/gtag/js
+        https://www.googletagmanager.com/gtm.js https://www.googleadservices.com https://googleads.g.doubleclick.net
+        https://recaptcha.net https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; style-src ''self'' ''unsafe-inline'' https://www.coinbase.com
+        https://assets.coinbase.com/ https://card.coinbase.com/ static.coinbase.com;
+        report-uri /csp-report'
+      Etag:
+      - W/"7860cf94fbf3a3d4951a398a35f69a1a"
+      Expect-Ct:
+      - enforce, max-age=86400, report-uri="https://coinbase.report-uri.io/r/default/ct/reportOnly"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - __cf_bm=GSTTq20MSsg2SVMKtcSXyHNHFC8XrYXjcMV7lpm6tqM-1644985891-0-AcbmG+RToLezYnUxDj2xw80IM2SXTSMAHRDkIQN3bFtH5FmiPXc6V1hMoouTIsdKOkWLWdbbxRwusd/k34NCB+I=;
+        path=/; expires=Wed, 16-Feb-22 05:01:31 GMT; domain=.coinbase.com; HttpOnly;
+        Secure; SameSite=None
+      - _coinbase_session=VXhVMGovT2tERnV6dFErQnptc0duc0JyV2FGUmhMOHM0TmlsM2RlTFYvbjgzZmdHMk1pU3hyZ3B5UmdXb2FHdFRnTDFuNnFNYzdXckJUQllacWtmZXJ4a0lTSGFMYm8veThIeVRENFdPTU9GQUFyK3Q1YnB2WFcycGxkUDl0MVotLXB6UlR2aHRYTGhDZ3p4Sys4Q0lheVE9PQ%3D%3D--3c34027ec2d84bd746e3c1c05bb093996d6d7f60;
+        path=/; secure; HttpOnly
+      - amplitude_device_id=5a24f9a0-346c-4004-96b0-1799a72e1838; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:31:28 GMT; secure; SameSite=Lax
+      - cb_dm=1a9acb72-3d3b-445c-9aa5-edc6150d0bbb; Path=/; Domain=coinbase.com; Expires=Mon,
+        16 Feb 2032 04:31:28 GMT; HttpOnly; Secure
+      - coinbase_device_id=5a24f9a0-346c-4004-96b0-1799a72e1838; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:31:28 GMT; secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Trace-Id:
+      - '5835494362452824035'
+      Vary:
+      - Origin,Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Proof-of-Work
+      X-Request-Id:
+      - 0d1109b3-9e91-4d78-a4be-3ea60572fb51
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6de40beb5cfa8c36-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"created_at":"2021-04-16T09:41:57Z","display_input_amount":{"amount":"30.00","currency":"USD"},"id":"b33f363b-6783-5a43-8ef0-6a128d2224f8","input_amount":{"amount":"29.96895217","currency":"DAI"},"output_amount":{"amount":"0.00048516","currency":"BTC"},"exchange_rate":{"amount":"0.00001619","currency":"BTC"},"unit_price":{"target_to_fiat":{"amount":"61773.44","currency":"USD"},"target_to_source":{"amount":"61771.27580592","currency":"DAI"}},"fee":{"amount":"0.00","currency":"USD"},"status":"completed","updated_at":"2021-04-16T09:42:02Z","user_warnings":[],"applied_subscription_benefit":false,"fee_without_subscription_benefit":null},{"created_at":"2021-04-17T14:47:49Z","display_input_amount":{"amount":"30.00","currency":"USD"},"id":"e25a2ede-cd3a-57af-987c-0a81bc40d632","input_amount":{"amount":"29.98984844","currency":"DAI"},"output_amount":{"amount":"0.00048397","currency":"BTC"},"exchange_rate":{"amount":"0.00001614","currency":"BTC"},"unit_price":{"target_to_fiat":{"amount":"61966.65","currency":"USD"},"target_to_source":{"amount":"61966.33766556","currency":"DAI"}},"fee":{"amount":"0.00","currency":"USD"},"status":"completed","updated_at":"2021-04-17T14:47:55Z","user_warnings":[],"applied_subscription_benefit":false,"fee_without_subscription_benefit":null},{"created_at":"2021-04-23T01:09:12Z","display_input_amount":{"amount":"15.00","currency":"USD"},"id":"1ed7e1fd-5f0a-57cf-b6c6-de6886cc4949","input_amount":{"amount":"14.99744294","currency":"DAI"},"output_amount":{"amount":"0.00028741","currency":"BTC"},"exchange_rate":{"amount":"0.00001916","currency":"BTC"},"unit_price":{"target_to_fiat":{"amount":"52190.25","currency":"USD"},"target_to_source":{"amount":"52181.35395428","currency":"DAI"}},"fee":{"amount":"0.00","currency":"USD"},"status":"completed","updated_at":"2021-04-23T01:09:18Z","user_warnings":[],"applied_subscription_benefit":false,"fee_without_subscription_benefit":null}]}'
+  recorded_at: Wed, 16 Feb 2022 04:31:31 GMT
+recorded_with: VCR 6.0.0

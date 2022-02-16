@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coinbase.com/v2/accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Fake-Header:
+      - Fake value
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 16 Feb 2022 03:58:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.coinbase.com; child-src ''self'' https://www.coinbase.com
+        https://fast.wistia.net https://*.online-metrix.net https://*.wpstn.com https://netverify.com
+        https://platform.twitter.com https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/
+        https://cdn.plaid.com/link/ https://*.doubleclick.net/ blob:; connect-src
+        ''self'' https://www.coinbase.com https://api.coinbase.com https://*.online-metrix.net
+        https://api.cloudinary.com https://ott9.wpstn.com/live https://api.amplitude.com/
+        https://api2.amplitude.com/ https://d3907m2cqladbn.cloudfront.net/ https://exceptions.coinbase.com
+        https://assets.coinbase.com/ https://sessions.coinbase.com/ https://dynamic-assets.coinbase.com/
+        https://events-service.coinbase.com/amp static.coinbase.com wss://ws.coinbase.com
+        wss://ws.coinbase.com:443 https://www.coinbase.com/api; font-src ''self''
+        https://www.coinbase.com https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; img-src ''self'' data: https://www.coinbase.com https://images.coinbase.com
+        https://d3907m2cqladbn.cloudfront.net/ https://static-assets.coinbase.com/
+        https://dynamic-assets.coinbase.com/ https://exceptions.coinbase.com https://coinbase-uploads.s3.amazonaws.com
+        https://s3.amazonaws.com/app-public/ https://maps.gstatic.com https://ssl.google-analytics.com
+        https://www.google.com https://maps.googleapis.com https://csi.gstatic.com
+        https://www.google-analytics.com https://res.cloudinary.com https://secure.gravatar.com
+        https://i2.wp.com https://*.online-metrix.net https://assets.coinbase.com/
+        https://hexagon-analytics.com https://cb-brand.s3.amazonaws.com https://googleads.g.doubleclick.net
+        https://stats.g.doubleclick.net/r/collect https://card.coinbase.com/ blob:
+        static.coinbase.com https://www.facebook.com/tr; media-src ''self'' https://www.coinbase.com
+        blob:; object-src ''self'' data: blob: https://www.coinbase.com https://cdn.siftscience.com
+        https://*.online-metrix.net https://www.gstatic.com https://www.google.com/recaptcha/api/
+        https://recaptcha.net/recaptcha/; script-src ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https://www.coinbase.com https://fast.wistia.com/assets/external/E-v1.js https://cdn.siftscience.com
+        https://*.google-analytics.com https://www.google.com https://www.gstatic.com
+        https://*.online-metrix.net https://code.jquery.com https://chart.googleapis.com
+        https://maps.googleapis.com https://maps.gstatic.com https://netverify.com
+        https://ajax.cloudflare.com https://cdn.plaid.com/link/v2/stable/ https://www.googletagmanager.com/gtag/js
+        https://www.googletagmanager.com/gtm.js https://www.googleadservices.com https://googleads.g.doubleclick.net
+        https://recaptcha.net https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; style-src ''self'' ''unsafe-inline'' https://www.coinbase.com
+        https://assets.coinbase.com/ https://card.coinbase.com/ static.coinbase.com;
+        report-uri /csp-report'
+      Expect-Ct:
+      - enforce, max-age=86400, report-uri="https://coinbase.report-uri.io/r/default/ct/reportOnly"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - __cf_bm=HHY2WY9d.k0fyq.V.32n0sKlUi6RHlq_prHgRpw1_xo-1644983921-0-AYEH0JXnLtfArrz31lLlu4tiXMjFzp5nJomanvazfHz4G+6NYpkXmQzv06tjQj7DF3z+v8dVughFscixzFMEH6U=;
+        path=/; expires=Wed, 16-Feb-22 04:28:41 GMT; domain=.coinbase.com; HttpOnly;
+        Secure; SameSite=None
+      - _coinbase_session=ekRzWFZHeVFEcFZmTEZiVjVBZm1CZVhvbTg3RG5SS2wyRVROdzRxL3owWTlSNDBGNWx2dnZMbXJNMUZjTE8yK0REWlR5RDJJNzdwL0NTRlYvTXY3Z05UOXVXVUo5bFd0NmpKeWlhbkpKYTU4NFF2WmNtVUhCZ3c4RGtLQURnbUItLXVTVHF2RkVIUENGUk5ieEREeXIwaGc9PQ%3D%3D--fce09bc836408d48582aa9d34355e4b0265d1ca0;
+        path=/; secure; HttpOnly
+      - amplitude_device_id=c10d2bb4-43c9-4397-a775-bf88e3319238; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 03:58:41 GMT; secure; SameSite=Lax
+      - cb_dm=7e286c18-69b0-4fa8-8218-536c27a91229; Path=/; Domain=coinbase.com; Expires=Mon,
+        16 Feb 2032 03:58:41 GMT; HttpOnly; Secure
+      - coinbase_device_id=c10d2bb4-43c9-4397-a775-bf88e3319238; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 03:58:41 GMT; secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Trace-Id:
+      - '7157271335408289921'
+      Vary:
+      - Origin,Accept-Encoding
+      Www-Authenticate:
+      - Bearer realm="Doorkeeper", error="invalid_token", error_description="The access
+        token is invalid"
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Proof-of-Work
+      X-Request-Id:
+      - '04695db7-f14e-4501-a0e1-03e00ff1ecd1'
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6de3dbe2fd7d196b-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"id":"invalid_token","message":"The access token is invalid"}]}'
+  recorded_at: Wed, 16 Feb 2022 03:58:41 GMT
+recorded_with: VCR 6.0.0

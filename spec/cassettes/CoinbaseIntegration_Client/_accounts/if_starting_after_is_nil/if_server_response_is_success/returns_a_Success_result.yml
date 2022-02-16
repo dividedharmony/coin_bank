@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coinbase.com/v2/accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Cb-Access-Key:
+      - "<COINBASE_API_KEY>"
+      Cb-Access-Sign:
+      - a1ee7b379be08226220c9e771e257ffe5ef7b7b95b80dc7ae2e041fddfa9a698
+      Cb-Access-Timestamp:
+      - '1644984185'
+      Cb-Version:
+      - '2021-03-31'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Feb 2022 04:03:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Content-Disposition:
+      - attachment; filename=response.json
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.coinbase.com; child-src ''self'' https://www.coinbase.com
+        https://fast.wistia.net https://*.online-metrix.net https://*.wpstn.com https://netverify.com
+        https://platform.twitter.com https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/
+        https://cdn.plaid.com/link/ https://*.doubleclick.net/ blob:; connect-src
+        ''self'' https://www.coinbase.com https://api.coinbase.com https://*.online-metrix.net
+        https://api.cloudinary.com https://ott9.wpstn.com/live https://api.amplitude.com/
+        https://api2.amplitude.com/ https://d3907m2cqladbn.cloudfront.net/ https://exceptions.coinbase.com
+        https://assets.coinbase.com/ https://sessions.coinbase.com/ https://dynamic-assets.coinbase.com/
+        https://events-service.coinbase.com/amp static.coinbase.com wss://ws.coinbase.com
+        wss://ws.coinbase.com:443 https://www.coinbase.com/api; font-src ''self''
+        https://www.coinbase.com https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; img-src ''self'' data: https://www.coinbase.com https://images.coinbase.com
+        https://d3907m2cqladbn.cloudfront.net/ https://static-assets.coinbase.com/
+        https://dynamic-assets.coinbase.com/ https://exceptions.coinbase.com https://coinbase-uploads.s3.amazonaws.com
+        https://s3.amazonaws.com/app-public/ https://maps.gstatic.com https://ssl.google-analytics.com
+        https://www.google.com https://maps.googleapis.com https://csi.gstatic.com
+        https://www.google-analytics.com https://res.cloudinary.com https://secure.gravatar.com
+        https://i2.wp.com https://*.online-metrix.net https://assets.coinbase.com/
+        https://hexagon-analytics.com https://cb-brand.s3.amazonaws.com https://googleads.g.doubleclick.net
+        https://stats.g.doubleclick.net/r/collect https://card.coinbase.com/ blob:
+        static.coinbase.com https://www.facebook.com/tr; media-src ''self'' https://www.coinbase.com
+        blob:; object-src ''self'' data: blob: https://www.coinbase.com https://cdn.siftscience.com
+        https://*.online-metrix.net https://www.gstatic.com https://www.google.com/recaptcha/api/
+        https://recaptcha.net/recaptcha/; script-src ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https://www.coinbase.com https://fast.wistia.com/assets/external/E-v1.js https://cdn.siftscience.com
+        https://*.google-analytics.com https://www.google.com https://www.gstatic.com
+        https://*.online-metrix.net https://code.jquery.com https://chart.googleapis.com
+        https://maps.googleapis.com https://maps.gstatic.com https://netverify.com
+        https://ajax.cloudflare.com https://cdn.plaid.com/link/v2/stable/ https://www.googletagmanager.com/gtag/js
+        https://www.googletagmanager.com/gtm.js https://www.googleadservices.com https://googleads.g.doubleclick.net
+        https://recaptcha.net https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; style-src ''self'' ''unsafe-inline'' https://www.coinbase.com
+        https://assets.coinbase.com/ https://card.coinbase.com/ static.coinbase.com;
+        report-uri /csp-report'
+      Etag:
+      - W/"1ca2bc6b5f4de6dc219dfea8c39ca10e"
+      Expect-Ct:
+      - enforce, max-age=86400, report-uri="https://coinbase.report-uri.io/r/default/ct/reportOnly"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - __cf_bm=wSWZTU2u.I6vLly.ejTUsy..4TbK2nrPRzFAJC1.438-1644984186-0-AVEeNZLmtiEnSrOmQ7sfIqaYank5t2yW/CBlQO5J2DSuJgq/DPnKqb58hkQ//7vvWoCchzm+qjKQ94jMy/Cnw3k=;
+        path=/; expires=Wed, 16-Feb-22 04:33:06 GMT; domain=.coinbase.com; HttpOnly;
+        Secure; SameSite=None
+      - _coinbase_session=THljV0M4cW9YN1YxbTU3WjFzd2hucEhnT2M5b2RqTjdjSm5yR1psN2crN0F6SURvVzQ3Tm1CblVQVEtmUnBhQVN2eUtEd3lTaXlpbVFTdVlua0lYczZSTkp5dW5OeHg3NkptZ2d6a2EwQlpmeDRwL0JsTWlwWjZlaGpYYi9VRGQtLTVQYk5iaW9sT3FuUGNXUU5ZSEtxM3c9PQ%3D%3D--e2027a6e43ae220fbb00b7c8aeb697cb24a97b75;
+        path=/; secure; HttpOnly
+      - amplitude_device_id=eaf8b55f-67f4-4377-8533-5f8ee1087247; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:03:05 GMT; secure; SameSite=Lax
+      - cb_dm=c531ebbb-c371-49d5-9cf1-d084a9c70f9b; Path=/; Domain=coinbase.com; Expires=Mon,
+        16 Feb 2032 04:03:05 GMT; HttpOnly; Secure
+      - coinbase_device_id=eaf8b55f-67f4-4377-8533-5f8ee1087247; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:03:05 GMT; secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Trace-Id:
+      - '6984189320890642688'
+      Vary:
+      - Origin,Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Proof-of-Work
+      X-Request-Id:
+      - 31a8b220-e42a-4a98-98d2-5f39def06431
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6de3e2593dea8cbd-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination":{"ending_before":null,"starting_after":null,"previous_ending_before":null,"next_starting_after":"ffe6501b-71b3-5e65-b031-887893b70e05","limit":25,"order":"desc","previous_uri":null,"next_uri":"/v2/accounts?starting_after=ffe6501b-71b3-5e65-b031-887893b70e05"},"data":[{"id":"2fc10e3c-c89f-58dd-a70c-01b652af5c69","name":"TRU
+        Wallet","primary":true,"type":"wallet","currency":{"code":"TRU","name":"Truefi","color":"#1A5AFF","sort_index":208,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"248c3984-79c8-5df2-a35d-bbd3a3e16e70","slug":"truefi-token"},"balance":{"amount":"0.00000000","currency":"TRU"},"created_at":"2021-08-17T19:49:17Z","updated_at":"2021-08-17T19:49:17Z","resource":"account","resource_path":"/v2/accounts/2fc10e3c-c89f-58dd-a70c-01b652af5c69","allow_deposits":true,"allow_withdrawals":true},{"id":"8877e028-6486-58fc-846f-7fc96182514a","name":"WLUNA
+        Wallet","primary":true,"type":"wallet","currency":{"code":"WLUNA","name":"Wrapped
+        Luna","color":"#28CD88","sort_index":207,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"ecd5367c-801d-5160-8c7a-6bb5f9bb018b","slug":"wrapped-luna-token"},"balance":{"amount":"0.00000000","currency":"WLUNA"},"created_at":"2021-08-17T19:49:17Z","updated_at":"2021-08-17T19:49:17Z","resource":"account","resource_path":"/v2/accounts/8877e028-6486-58fc-846f-7fc96182514a","allow_deposits":true,"allow_withdrawals":true},{"id":"989ea5e6-a965-5c3f-a9cd-cfad5dd9afb0","name":"REQ
+        Wallet","primary":true,"type":"wallet","currency":{"code":"REQ","name":"Request","color":"#00E6A0","sort_index":206,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"7c6cf248-e06b-5426-a05d-ac2777159a11","slug":"request"},"balance":{"amount":"0.00000000","currency":"REQ"},"created_at":"2021-08-17T19:49:17Z","updated_at":"2021-08-17T19:49:17Z","resource":"account","resource_path":"/v2/accounts/989ea5e6-a965-5c3f-a9cd-cfad5dd9afb0","allow_deposits":true,"allow_withdrawals":true},{"id":"9522cdcc-e87d-55db-9906-8271bf1a3f80","name":"AXS
+        Wallet","primary":true,"type":"wallet","currency":{"code":"AXS","name":"Axie
+        Infinity","color":"#0055D5","sort_index":205,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"b76225e9-3cff-5c6f-88a2-2490f70cb02e","slug":"axie-infinity"},"balance":{"amount":"0.00000000","currency":"AXS"},"created_at":"2021-08-17T19:49:16Z","updated_at":"2021-08-17T19:49:16Z","resource":"account","resource_path":"/v2/accounts/9522cdcc-e87d-55db-9906-8271bf1a3f80","allow_deposits":true,"allow_withdrawals":true},{"id":"0569dc1c-2fc3-5247-88e5-be9a0b76e177","name":"QUICK
+        Wallet","primary":true,"type":"wallet","currency":{"code":"QUICK","name":"Quickswap","color":"#418AC9","sort_index":204,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"f04b2f59-319f-5fb5-ba88-2c33cca01901","slug":"quickswap"},"balance":{"amount":"0.00000000","currency":"QUICK"},"created_at":"2021-08-17T19:49:16Z","updated_at":"2021-08-17T19:49:16Z","resource":"account","resource_path":"/v2/accounts/0569dc1c-2fc3-5247-88e5-be9a0b76e177","allow_deposits":true,"allow_withdrawals":true},{"id":"deb6b952-05ca-58a1-bb10-6b004f35186d","name":"UST
+        Wallet","primary":true,"type":"wallet","currency":{"code":"UST","name":"TerraUSD","color":"#5493F7","sort_index":203,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"05120843-11c1-5b66-9df2-395db6d7ed6b","slug":"terrausd"},"balance":{"amount":"0.00000000","currency":"UST"},"created_at":"2021-08-17T19:49:16Z","updated_at":"2021-08-17T19:49:16Z","resource":"account","resource_path":"/v2/accounts/deb6b952-05ca-58a1-bb10-6b004f35186d","allow_deposits":true,"allow_withdrawals":true},{"id":"3c2d58a5-5e79-53f2-96e8-033ede9624e5","name":"IOTX
+        Wallet","primary":true,"type":"wallet","currency":{"code":"IOTX","name":"IoTeX","color":"#19263B","sort_index":202,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"56f8ea19-7e6a-5e38-ac47-fc9762b955ae","slug":"iotex"},"balance":{"amount":"0.00000000","currency":"IOTX"},"created_at":"2021-08-17T19:49:16Z","updated_at":"2021-08-17T19:49:16Z","resource":"account","resource_path":"/v2/accounts/3c2d58a5-5e79-53f2-96e8-033ede9624e5","allow_deposits":true,"allow_withdrawals":true},{"id":"c77b1adb-1939-5c86-9b82-0f10949b4b3a","name":"ORN
+        Wallet","primary":true,"type":"wallet","currency":{"code":"ORN","name":"Orion
+        Protocol","color":"#313151","sort_index":201,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"0c275161-fb4b-50c4-926b-d4d7d093b897","slug":"orion-protocol"},"balance":{"amount":"0.00000000","currency":"ORN"},"created_at":"2021-08-17T19:49:15Z","updated_at":"2021-08-17T19:49:15Z","resource":"account","resource_path":"/v2/accounts/c77b1adb-1939-5c86-9b82-0f10949b4b3a","allow_deposits":true,"allow_withdrawals":true},{"id":"b633eefe-94a0-5150-85b1-cd88e063cb61","name":"TRIBE
+        Wallet","primary":true,"type":"wallet","currency":{"code":"TRIBE","name":"Tribe","color":"#178DD0","sort_index":200,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"09fa97ba-0baa-554b-a4a7-bfc4d00f4086","slug":"tribe"},"balance":{"amount":"0.00000000","currency":"TRIBE"},"created_at":"2021-08-17T19:49:15Z","updated_at":"2021-08-17T19:49:15Z","resource":"account","resource_path":"/v2/accounts/b633eefe-94a0-5150-85b1-cd88e063cb61","allow_deposits":true,"allow_withdrawals":true},{"id":"f8bce783-137a-50fc-92f3-497df55d074b","name":"RAI
+        Wallet","primary":true,"type":"wallet","currency":{"code":"RAI","name":"Rai
+        Reflex Index","color":"#1FC8A7","sort_index":199,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"8adc8071-0938-5583-b672-6033f16f2786","slug":"rai"},"balance":{"amount":"0.00000000","currency":"RAI"},"created_at":"2021-08-17T19:49:15Z","updated_at":"2021-08-17T19:49:15Z","resource":"account","resource_path":"/v2/accounts/f8bce783-137a-50fc-92f3-497df55d074b","allow_deposits":true,"allow_withdrawals":true},{"id":"2aaeb928-2d42-5794-bc32-ff4f0ca4dd3b","name":"PLA
+        Wallet","primary":true,"type":"wallet","currency":{"code":"PLA","name":"PlayDapp","color":"#02D6B4","sort_index":198,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"baeb8efc-a5a6-5d8a-844c-2b95e4d09c99","slug":"playdapp"},"balance":{"amount":"0.00000000","currency":"PLA"},"created_at":"2021-08-17T19:49:15Z","updated_at":"2021-08-17T19:49:15Z","resource":"account","resource_path":"/v2/accounts/2aaeb928-2d42-5794-bc32-ff4f0ca4dd3b","allow_deposits":true,"allow_withdrawals":true},{"id":"273e5920-8643-5caa-9a63-519eb1939c3d","name":"ACH
+        Wallet","primary":true,"type":"wallet","currency":{"code":"ACH","name":"Alchemy
+        Pay","color":"#2E3567","sort_index":196,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"045e4fab-f2ca-58a3-ac2b-8c47c5d23968","slug":"alchemy-pay"},"balance":{"amount":"0.00000000","currency":"ACH"},"created_at":"2021-08-17T19:49:14Z","updated_at":"2021-08-17T19:49:14Z","resource":"account","resource_path":"/v2/accounts/273e5920-8643-5caa-9a63-519eb1939c3d","allow_deposits":true,"allow_withdrawals":true},{"id":"f78a8fb0-bd16-5460-80b1-76db8c7dc5e4","name":"PAX
+        Wallet","primary":true,"type":"wallet","currency":{"code":"PAX","name":"Paxos
+        Standard","color":"#2F8260","sort_index":195,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"be4a78af-d300-59b0-9c70-ba42a93caf56","slug":"paxos-standard"},"balance":{"amount":"0.00000000","currency":"PAX"},"created_at":"2021-08-17T19:49:14Z","updated_at":"2021-08-17T19:49:14Z","resource":"account","resource_path":"/v2/accounts/f78a8fb0-bd16-5460-80b1-76db8c7dc5e4","allow_deposits":true,"allow_withdrawals":true},{"id":"35261d31-9f5d-5341-99fa-157617e191cd","name":"FET
+        Wallet","primary":true,"type":"wallet","currency":{"code":"FET","name":"Fetch.ai","color":"#1D2743","sort_index":194,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"3672ab4a-25e0-57a8-b029-99239c081958","slug":"fetch"},"balance":{"amount":"0.00000000","currency":"FET"},"created_at":"2021-08-17T19:49:14Z","updated_at":"2021-08-17T19:49:14Z","resource":"account","resource_path":"/v2/accounts/35261d31-9f5d-5341-99fa-157617e191cd","allow_deposits":true,"allow_withdrawals":true},{"id":"5043520a-7db5-5187-9f79-10d8b35e30d9","name":"MASK
+        Wallet","primary":true,"type":"wallet","currency":{"code":"MASK","name":"Mask
+        Network","color":"#1C68F3","sort_index":191,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"45ce7f01-2962-5576-8dfd-449e4a49b75d","slug":"mask-network"},"balance":{"amount":"0.00000000","currency":"MASK"},"created_at":"2021-08-17T19:49:13Z","updated_at":"2021-08-17T19:49:13Z","resource":"account","resource_path":"/v2/accounts/5043520a-7db5-5187-9f79-10d8b35e30d9","allow_deposits":true,"allow_withdrawals":true},{"id":"43135766-a84e-5315-94ae-e75f20aa216d","name":"FARM
+        Wallet","primary":true,"type":"wallet","currency":{"code":"FARM","name":"Harvest
+        Finance","color":"#BDE4E3","sort_index":190,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"7ea0bd74-3cab-5bf8-94e2-f0c0b3896f07","slug":"harvest-finance"},"balance":{"amount":"0.00000000","currency":"FARM"},"created_at":"2021-08-17T19:49:13Z","updated_at":"2021-08-17T19:49:13Z","resource":"account","resource_path":"/v2/accounts/43135766-a84e-5315-94ae-e75f20aa216d","allow_deposits":true,"allow_withdrawals":true},{"id":"b8fbdd58-6808-50e4-99ab-0557fef36465","name":"CLV
+        Wallet","primary":true,"type":"wallet","currency":{"code":"CLV","name":"Clover","color":"#42C37B","sort_index":189,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"453639be-192e-5e36-88e3-38496e542524","slug":"clover-finance"},"balance":{"amount":"0.00000000","currency":"CLV"},"created_at":"2021-08-17T19:49:13Z","updated_at":"2021-08-17T19:49:13Z","resource":"account","resource_path":"/v2/accounts/b8fbdd58-6808-50e4-99ab-0557fef36465","allow_deposits":true,"allow_withdrawals":true},{"id":"ba1246a4-4082-50b2-883f-8d0cf8b448a9","name":"RLY
+        Wallet","primary":true,"type":"wallet","currency":{"code":"RLY","name":"Rally","color":"#FF8A03","sort_index":188,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"39d7d62b-c1fc-5db4-bc0e-a0465473a748","slug":"rally"},"balance":{"amount":"0.00000000","currency":"RLY"},"created_at":"2021-08-17T19:49:13Z","updated_at":"2021-08-17T19:49:13Z","resource":"account","resource_path":"/v2/accounts/ba1246a4-4082-50b2-883f-8d0cf8b448a9","allow_deposits":true,"allow_withdrawals":true},{"id":"c676bdaa-b6d3-5c95-b422-84ea182d077d","name":"BOND
+        Wallet","primary":true,"type":"wallet","currency":{"code":"BOND","name":"BarnBridge","color":"#FF4339","sort_index":187,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"b5652bd9-8ea8-5451-b153-96fbcba1ace5","slug":"barnbridge"},"balance":{"amount":"0.00000000","currency":"BOND"},"created_at":"2021-08-17T19:49:12Z","updated_at":"2021-08-17T19:49:12Z","resource":"account","resource_path":"/v2/accounts/c676bdaa-b6d3-5c95-b422-84ea182d077d","allow_deposits":true,"allow_withdrawals":true},{"id":"26a9ac2c-84ca-5afa-bed7-42050fca0826","name":"QNT
+        Wallet","primary":true,"type":"wallet","currency":{"code":"QNT","name":"Quant","color":"#EF4F1F","sort_index":186,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"13a06dc2-f4c7-58c1-91f0-f4ad4a867f82","slug":"quant"},"balance":{"amount":"0.00000000","currency":"QNT"},"created_at":"2021-08-17T19:49:12Z","updated_at":"2021-08-17T19:49:12Z","resource":"account","resource_path":"/v2/accounts/26a9ac2c-84ca-5afa-bed7-42050fca0826","allow_deposits":true,"allow_withdrawals":true},{"id":"b8176520-24fa-531d-a1ef-a695dfe53aa8","name":"LPT
+        Wallet","primary":true,"type":"wallet","currency":{"code":"LPT","name":"Livepeer","color":"#28CD88","sort_index":143,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"31acd6f6-d560-5a59-b77d-f9fa57c19167","slug":"livepeer"},"balance":{"amount":"0.00000000","currency":"LPT"},"created_at":"2021-08-17T19:49:12Z","updated_at":"2021-08-17T19:49:12Z","resource":"account","resource_path":"/v2/accounts/b8176520-24fa-531d-a1ef-a695dfe53aa8","allow_deposits":true,"allow_withdrawals":true},{"id":"6460b02b-7515-5f86-93b7-40e2c5707469","name":"KEEP
+        Wallet","primary":true,"type":"wallet","currency":{"code":"KEEP","name":"Keep
+        Network","color":"#0A0806","sort_index":185,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"cb05fece-8b7f-5717-a317-df3979b4ce12","slug":"keep-network"},"balance":{"amount":"0.00000000","currency":"KEEP"},"created_at":"2021-08-17T19:49:11Z","updated_at":"2021-08-17T19:49:11Z","resource":"account","resource_path":"/v2/accounts/6460b02b-7515-5f86-93b7-40e2c5707469","allow_deposits":true,"allow_withdrawals":true},{"id":"a361cbed-50a3-5c24-96d6-8923fd958a04","name":"CHZ
+        Wallet","primary":true,"type":"wallet","currency":{"code":"CHZ","name":"Chiliz","color":"#B02728","sort_index":184,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"3b6a0532-d638-58ab-b7f8-16ead09d686d","slug":"chiliz"},"balance":{"amount":"0.00000000","currency":"CHZ"},"created_at":"2021-08-17T19:49:11Z","updated_at":"2021-08-17T19:49:11Z","resource":"account","resource_path":"/v2/accounts/a361cbed-50a3-5c24-96d6-8923fd958a04","allow_deposits":true,"allow_withdrawals":true},{"id":"d784b425-6f8d-5678-b57d-6ecf552c04e2","name":"AMP
+        Wallet","primary":true,"type":"wallet","currency":{"code":"AMP","name":"Amp","color":"#E42E95","sort_index":182,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"f3b62870-ddd0-5dea-9d80-5190d8558461","slug":"amp"},"balance":{"amount":"0.00000000","currency":"AMP"},"created_at":"2021-08-17T19:49:11Z","updated_at":"2021-08-17T19:49:11Z","resource":"account","resource_path":"/v2/accounts/d784b425-6f8d-5678-b57d-6ecf552c04e2","allow_deposits":true,"allow_withdrawals":true},{"id":"ffe6501b-71b3-5e65-b031-887893b70e05","name":"GTC
+        Wallet","primary":true,"type":"wallet","currency":{"code":"GTC","name":"Gitcoin","color":"#02E2AC","sort_index":181,"exponent":8,"type":"crypto","address_regex":"^(?:0x)?[0-9a-fA-F]{40}$","asset_id":"19ca00b2-3058-5e4b-a84b-c84b74baed10","slug":"gitcoin"},"balance":{"amount":"0.00000000","currency":"GTC"},"created_at":"2021-08-17T19:49:11Z","updated_at":"2021-08-17T19:49:11Z","resource":"account","resource_path":"/v2/accounts/ffe6501b-71b3-5e65-b031-887893b70e05","allow_deposits":true,"allow_withdrawals":true}]}'
+  recorded_at: Wed, 16 Feb 2022 04:03:06 GMT
+recorded_with: VCR 6.0.0

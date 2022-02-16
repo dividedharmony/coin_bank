@@ -1,0 +1,136 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coinbase.com/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions?starting_after=381ccf7f-760e-5eab-9989-3ef43a43c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Cb-Access-Key:
+      - "<COINBASE_API_KEY>"
+      Cb-Access-Sign:
+      - 0fb311a486843beb6a9c5575bbf2e6b82a0dd0107ff2efa2296de2359fe1c22e
+      Cb-Access-Timestamp:
+      - '1644985495'
+      Cb-Version:
+      - '2021-03-31'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Feb 2022 04:24:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Content-Disposition:
+      - attachment; filename=response.json
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.coinbase.com; child-src ''self'' https://www.coinbase.com
+        https://fast.wistia.net https://*.online-metrix.net https://*.wpstn.com https://netverify.com
+        https://platform.twitter.com https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/
+        https://cdn.plaid.com/link/ https://*.doubleclick.net/ blob:; connect-src
+        ''self'' https://www.coinbase.com https://api.coinbase.com https://*.online-metrix.net
+        https://api.cloudinary.com https://ott9.wpstn.com/live https://api.amplitude.com/
+        https://api2.amplitude.com/ https://d3907m2cqladbn.cloudfront.net/ https://exceptions.coinbase.com
+        https://assets.coinbase.com/ https://sessions.coinbase.com/ https://dynamic-assets.coinbase.com/
+        https://events-service.coinbase.com/amp static.coinbase.com wss://ws.coinbase.com
+        wss://ws.coinbase.com:443 https://www.coinbase.com/api; font-src ''self''
+        https://www.coinbase.com https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; img-src ''self'' data: https://www.coinbase.com https://images.coinbase.com
+        https://d3907m2cqladbn.cloudfront.net/ https://static-assets.coinbase.com/
+        https://dynamic-assets.coinbase.com/ https://exceptions.coinbase.com https://coinbase-uploads.s3.amazonaws.com
+        https://s3.amazonaws.com/app-public/ https://maps.gstatic.com https://ssl.google-analytics.com
+        https://www.google.com https://maps.googleapis.com https://csi.gstatic.com
+        https://www.google-analytics.com https://res.cloudinary.com https://secure.gravatar.com
+        https://i2.wp.com https://*.online-metrix.net https://assets.coinbase.com/
+        https://hexagon-analytics.com https://cb-brand.s3.amazonaws.com https://googleads.g.doubleclick.net
+        https://stats.g.doubleclick.net/r/collect https://card.coinbase.com/ blob:
+        static.coinbase.com https://www.facebook.com/tr; media-src ''self'' https://www.coinbase.com
+        blob:; object-src ''self'' data: blob: https://www.coinbase.com https://cdn.siftscience.com
+        https://*.online-metrix.net https://www.gstatic.com https://www.google.com/recaptcha/api/
+        https://recaptcha.net/recaptcha/; script-src ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https://www.coinbase.com https://fast.wistia.com/assets/external/E-v1.js https://cdn.siftscience.com
+        https://*.google-analytics.com https://www.google.com https://www.gstatic.com
+        https://*.online-metrix.net https://code.jquery.com https://chart.googleapis.com
+        https://maps.googleapis.com https://maps.gstatic.com https://netverify.com
+        https://ajax.cloudflare.com https://cdn.plaid.com/link/v2/stable/ https://www.googletagmanager.com/gtag/js
+        https://www.googletagmanager.com/gtm.js https://www.googleadservices.com https://googleads.g.doubleclick.net
+        https://recaptcha.net https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; style-src ''self'' ''unsafe-inline'' https://www.coinbase.com
+        https://assets.coinbase.com/ https://card.coinbase.com/ static.coinbase.com;
+        report-uri /csp-report'
+      Etag:
+      - W/"0106546d9e0f1b513b92fe1b972054e2"
+      Expect-Ct:
+      - enforce, max-age=86400, report-uri="https://coinbase.report-uri.io/r/default/ct/reportOnly"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - __cf_bm=aI4DQGFTOgA0X4N9pIBDfuCs09T7s7cJ3k6RxWxmRrc-1644985496-0-AU1h7wOQCf93hET/hwR+HOmhZxdpMtSg1vqJ5oVMFKUjB1w7/cfEbKdyHBJwFgJ7etrjDvqGYnHC6dEczqgQ4Tc=;
+        path=/; expires=Wed, 16-Feb-22 04:54:56 GMT; domain=.coinbase.com; HttpOnly;
+        Secure; SameSite=None
+      - _coinbase_session=WElXYys3SWxoTG8xUlNzK2RSNVg3Y1I4bG1GRTRtbjhhNVI0NllGSGM5blU2Tmd1aFJXaDRvYTE2b1FtUUdKVHZsSngvZHJXSm9xMXQvNTdmZ1RCdmt0L1hSZG9OWHNESWJlWGZ1RWEva3FUQ0RRc3RyWGVBNjZRaHhmbjN5R2gtLS9jZHU0eHJycU9aYThnZlFVekR1U1E9PQ%3D%3D--a00666263850c717ccfad484712070f32c688d52;
+        path=/; secure; HttpOnly
+      - amplitude_device_id=9a447638-428a-4094-8175-3eed8922878f; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:24:56 GMT; secure; SameSite=Lax
+      - cb_dm=69c06366-a855-4db0-b49e-6e3d227bf6e7; Path=/; Domain=coinbase.com; Expires=Mon,
+        16 Feb 2032 04:24:56 GMT; HttpOnly; Secure
+      - coinbase_device_id=9a447638-428a-4094-8175-3eed8922878f; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 04:24:56 GMT; secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Trace-Id:
+      - '3549354257571117341'
+      Vary:
+      - Origin,Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Proof-of-Work
+      X-Request-Id:
+      - 82a05e6b-4bec-4f96-b87e-0bb85c3187c5
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6de40256bfbb0cd1-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"35594d68-6df5-5b98-938e-2cdbb8c219bc","type":"trade","status":"completed","amount":{"amount":"0.00166782","currency":"MKR"},"native_amount":{"amount":"9.84","currency":"USD"},"description":null,"created_at":"2021-05-04T12:54:35Z","updated_at":"2021-05-04T12:54:36Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/35594d68-6df5-5b98-938e-2cdbb8c219bc","instant_exchange":false,"trade":{"id":"212f4a1c-308c-5229-895d-1598ff5d9f01","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/212f4a1c-308c-5229-895d-1598ff5d9f01"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00166782 MKR
+        ($9.84)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"827eff26-ff56-58cb-a3ac-c27612987a80","type":"trade","status":"completed","amount":{"amount":"0.00099042","currency":"MKR"},"native_amount":{"amount":"4.90","currency":"USD"},"description":null,"created_at":"2021-05-02T14:38:35Z","updated_at":"2021-05-02T14:38:37Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/827eff26-ff56-58cb-a3ac-c27612987a80","instant_exchange":false,"trade":{"id":"7060e983-a986-5147-b4ef-5e9351149412","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/7060e983-a986-5147-b4ef-5e9351149412"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00099042 MKR
+        ($4.90)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false},{"id":"b9ee9527-84a2-5fa0-85bf-59a06b9de0db","type":"trade","status":"completed","amount":{"amount":"0.00124939","currency":"MKR"},"native_amount":{"amount":"5.88","currency":"USD"},"description":null,"created_at":"2021-05-02T02:46:06Z","updated_at":"2021-05-02T02:46:07Z","resource":"transaction","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions/b9ee9527-84a2-5fa0-85bf-59a06b9de0db","instant_exchange":false,"trade":{"id":"0b28564c-ff0e-5c31-a240-9f909eee4cd0","resource":"trade","resource_path":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/trades/0b28564c-ff0e-5c31-a240-9f909eee4cd0"},"details":{"title":"Converted
+        to Maker","subtitle":"Using DAI Wallet","header":"Converted 0.00124939 MKR
+        ($5.88)","health":"positive","payment_method_name":"DAI Wallet"},"hide_native_amount":false}],"pagination":{"ending_before":null,"starting_after":"381ccf7f-760e-5eab-9989-3ef43a43c34a","previous_ending_before":"35594d68-6df5-5b98-938e-2cdbb8c219bc","next_starting_after":null,"limit":25,"order":"desc","previous_uri":"/v2/accounts/966746cb-62a3-5b8f-b268-f4b8732d59e2/transactions?ending_before=35594d68-6df5-5b98-938e-2cdbb8c219bc","next_uri":null}}'
+  recorded_at: Wed, 16 Feb 2022 04:24:56 GMT
+recorded_with: VCR 6.0.0
