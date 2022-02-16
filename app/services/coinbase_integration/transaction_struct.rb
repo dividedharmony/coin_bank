@@ -14,6 +14,7 @@ module CoinbaseIntegration
 
     def initialize(raw_transaction)
       @raw_transaction = raw_transaction
+      @coinbase_uuid = raw_transaction.fetch('id')
       @type = raw_transaction.fetch('type')
       @amount_data = raw_transaction.fetch('amount')
       @native_amount_data = raw_transaction.fetch('native_amount')
@@ -25,6 +26,7 @@ module CoinbaseIntegration
     end
 
     attr_reader :raw_transaction,
+                :coinbase_uuid,
                 :type,
                 :amount_data,
                 :native_amount_data,

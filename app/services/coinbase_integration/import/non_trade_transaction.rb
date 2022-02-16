@@ -17,7 +17,7 @@ module CoinbaseIntegration
           to_amount: transaction_struct.to_amount,
           exchange_rate: transaction_struct.exchange_rate,
           transacted_at: transaction_struct.transacted_at,
-          coinbase_uuid: raw_transaction.fetch('id')
+          coinbase_uuid: transaction_struct.coinbase_uuid
         )
       end
 
