@@ -8,23 +8,23 @@ module CoinbaseIntegration
       def initialize(output)
         @output = output
         @account_importer = Query::Accounts.new(output)
-        @temp_transactions = {}
+        @stored_transactions = {}
       end
 
       def retrieve
         output.puts 'Beginning import...'
         retrieve_resources_from_api
         output.puts 'Finished retrieving from api...'
-        return fail!('No transactions to import') if temp_transactions.empty?
+        return fail!('No transactions to import') if stored_transactions.empty?
         
         succeed!(self)
       end
 
-      delegate :values, to: :temp_transactions
+      delegate :values, to: :stored_transactions
 
       private
 
-      attr_reader :output, :account_importer, :temp_transactions
+      attr_reader :output, :account_importer, :stored_transactions
 
       def retrieve_resources_from_api
         account_importer.retrieve.bind do |accounts|
@@ -34,7 +34,7 @@ module CoinbaseIntegration
               output.puts warning
               fail!(warning)
             end.fmap do |transactions|
-              temp_transactions = temp_transactions.merge(transactions.to_h)
+              stored_transactions = stored_transactions.merge(transactions.to_h)
             end
           end
         end
