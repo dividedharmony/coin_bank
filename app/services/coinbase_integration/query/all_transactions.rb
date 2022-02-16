@@ -3,6 +3,8 @@
 module CoinbaseIntegration
   module Query
     class AllTransactions
+      class QueryFailed < StandardError; end
+
       include Results::Methods
 
       def initialize(output)
@@ -13,11 +15,21 @@ module CoinbaseIntegration
 
       def retrieve
         output.puts 'Beginning import...'
-        retrieve_resources_from_api
-        output.puts 'Finished retrieving from api...'
-        return fail!('No transactions to import') if stored_transactions.empty?
-        
-        succeed!(self)
+        account_importer.retrieve.bind do |accounts|
+          store_transactions_from(accounts)
+        end.bind do
+          stored_transactions.empty? ? fail!('No transactions to import') : succeed!(nil)
+          if stored_transactions.empty?
+            fail!('No transactions to import.')
+          else
+            output.puts 'Finished retrieving from api...'
+            succeed!(self)
+          end
+        end.or do |failure_message|
+          warning = "WARNING: #{failure_message}"
+          output.puts warning
+          fail!(failure_message)
+        end
       end
 
       delegate :values, to: :stored_transactions
@@ -26,18 +38,17 @@ module CoinbaseIntegration
 
       attr_reader :output, :account_importer, :stored_transactions
 
-      def retrieve_resources_from_api
-        account_importer.retrieve.bind do |accounts|
-          accounts.values.each do |account|
-            query_transactions(account[:id]).or do |failure_message|
-              warning = "WARNING: [#{account[:name]}]: #{failure_message}"
-              output.puts warning
-              fail!(warning)
-            end.fmap do |transactions|
-              stored_transactions = stored_transactions.merge(transactions.to_h)
-            end
+      def store_transactions_from(accounts)
+        accounts.values.each do |account|
+          query_transactions(account['id']).or do |failure_message|
+            raise QueryFailed, "[#{account['name']}]: #{failure_message}"
+          end.fmap do |transactions|
+            @stored_transactions = @stored_transactions.merge(transactions.to_h)
           end
         end
+        succeed!(nil)
+      rescue QueryFailed => e
+        fail!(e.message)
       end
 
       def query_transactions(account_id)
