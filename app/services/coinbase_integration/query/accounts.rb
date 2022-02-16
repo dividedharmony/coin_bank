@@ -32,29 +32,12 @@ module CoinbaseIntegration
           succeed!(self)
         end
       end
-  
-      def [](account_id)
-        get_account(account_id).or { fetch_and_store(account_id) }
-      end
 
       delegate :values, to: :stored_accounts
   
       private
   
       attr_reader :output, :client, :stored_accounts
-
-      def get_account(account_id)
-        account_hash = stored_accounts[account_id]
-        account_hash.nil? ?
-          fail!("No account with id '#{account_id}'") :
-          succeed!(account_hash)
-      end
-
-      def fetch_and_store(account_id)
-        client.account(account_id).bind do |api_resource|
-          store_account(api_resource.data)
-        end
-      end
 
       def store_account(raw_account)
         stored_accounts[raw_account['id']] = raw_account.with_indifferent_access
