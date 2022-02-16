@@ -3,6 +3,8 @@
 module CoinbaseIntegration
   module Query
     class AccountBuys
+      class QueryFailed < StandardError; end
+
       include Results::Methods
   
       def initialize(output, account_id)
@@ -17,7 +19,7 @@ module CoinbaseIntegration
         loop do
           output.puts "...Querying buys for #{account_id}"
           query_buys(next_starting_after).or do |failure_message|
-            raise StandardError, failure_message
+            raise QueryFailed, failure_message
           end.fmap do |api_resource|
             api_resource.each do |raw_buy|
               output.puts "......found a buy for #{raw_buy.dig('amount', 'amount')}"

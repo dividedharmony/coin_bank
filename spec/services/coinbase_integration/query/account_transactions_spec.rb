@@ -30,7 +30,10 @@ RSpec.describe CoinbaseIntegration::Query::AccountTransactions do
       end
 
       it 'raises an error' do
-        expect { subject }.to raise_error(StandardError, 'Unable to connect.')
+        expect { subject }.to raise_error(
+          CoinbaseIntegration::Query::AccountTransactions::QueryFailed,
+          'Unable to connect.'
+        )
       end
     end
 
