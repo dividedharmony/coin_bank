@@ -23,6 +23,8 @@ VCR.configure do |c|
   c.hook_into                :webmock
   c.default_cassette_options = { :record => :new_episodes }
   c.configure_rspec_metadata!
+  c.filter_sensitive_data('<COINBASE_API_KEY>') { ENV.fetch('COINBASE_API_KEY') }
+  c.filter_sensitive_data('<COINBASE_API_SECRET>') { ENV.fetch('COINBASE_API_SECRET') }
 end
 
 RSpec.configure do |config|
