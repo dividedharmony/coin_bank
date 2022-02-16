@@ -9,8 +9,8 @@ module CoinbaseIntegration
 
     include Results::Methods
 
-    def accounts(starting_after: nil)
-      request("/v2/accounts", starting_after: starting_after)
+    def accounts(starting_after_uuid: nil)
+      request("/v2/accounts", params: { starting_after: starting_after_uuid })
     end
 
     def transactions(account_uuid, starting_after_uuid: nil)

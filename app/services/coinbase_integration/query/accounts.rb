@@ -15,7 +15,7 @@ module CoinbaseIntegration
         next_starting_after = nil
         loop do
           output.puts "...Querying coinbase accounts..."
-          client.accounts(starting_after: next_starting_after).or do |failure_message|
+          client.accounts(starting_after_uuid: next_starting_after).or do |failure_message|
             raise StandardError, failure_message
           end.fmap do |api_resource|
             api_resource.each do |raw_account|
