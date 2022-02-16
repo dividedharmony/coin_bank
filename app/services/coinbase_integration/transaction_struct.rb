@@ -21,7 +21,7 @@ module CoinbaseIntegration
       @amount_value = amount_data.fetch('amount').to_d
       @amount_currency_sym = amount_data.fetch('currency')
       @native_value = native_amount_data.fetch('amount').to_d
-      @native_currency_sym = native_amount_data.fetch('amount')
+      @native_currency_sym = native_amount_data.fetch('currency')
       @transacted_at = raw_transaction.fetch('created_at').to_datetime
     end
 
@@ -45,18 +45,18 @@ module CoinbaseIntegration
       when SELL_TYPE
         amount_currency_sym
       else
-        raise UnknownTransactionType, temp_transaction.type
+        raise UnknownTransactionType, type
       end
     end
 
     def to_currency_symbol
-      case temp_transaction.type
+      case type
       when *REWARD_TYPES, BUY_TYPE
         amount_currency_sym
       when SELL_TYPE
         native_currency_sym
       else
-        raise UnknownTransactionType, raw_transaction[:type]
+        raise UnknownTransactionType, type
       end
     end
 
