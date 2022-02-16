@@ -34,7 +34,7 @@ module CoinbaseIntegration
     attr_reader :stored_currencies
 
     def get_currency(currency_symbol)
-      return stored_currencies[currency_symbol] if stored_currencies.key?(currency_symbol)
+      return succeed!(stored_currencies[currency_symbol]) if stored_currencies.key?(currency_symbol)
       currency = CoinBank::Currency.find_by(symbol: currency_symbol)
       if currency.nil?
         fail!("Could not find currency with symbol '#{currency_symbol}'.")
