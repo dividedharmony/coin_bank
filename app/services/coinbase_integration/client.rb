@@ -45,7 +45,9 @@ module CoinbaseIntegration
           Resource.new(parsed_body)
         )
       else
-        fail!(parsed_body["errors"])
+        errors = parsed_body['errors']
+        messages = errors.map { |e| e['message'] }
+        fail!(messages.join("\n"))
       end
     end
 
