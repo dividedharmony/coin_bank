@@ -40,14 +40,11 @@ module CoinbaseIntegration
         headers
       )
       parsed_body = JSON.parse(response.body)
+      resource = Resource.new(parsed_body)
       if response.success?
-        succeed!(
-          Resource.new(parsed_body)
-        )
+        succeed!(resource)
       else
-        errors = parsed_body['errors']
-        messages = errors.map { |e| e['message'] }
-        fail!(messages.join("\n"))
+        fail!(resource.error_message)
       end
     end
 

@@ -19,8 +19,12 @@ module CoinbaseIntegration
       body.fetch('pagination', {})
     end
 
-    def errors
-      body["errors"]
+    def error_message
+      errors = body["errors"]
+      return nil if errors.empty?
+
+      messages = errors.map { |e| e['message'] }
+      messages.join("\n")
     end
   end
 end
