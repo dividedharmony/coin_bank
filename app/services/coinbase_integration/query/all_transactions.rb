@@ -18,7 +18,6 @@ module CoinbaseIntegration
         account_importer.retrieve.bind do |accounts|
           store_transactions_from(accounts)
         end.bind do
-          stored_transactions.empty? ? fail!('No transactions to import') : succeed!(nil)
           if stored_transactions.empty?
             fail!('No transactions to import.')
           else
