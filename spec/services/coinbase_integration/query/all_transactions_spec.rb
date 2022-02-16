@@ -112,11 +112,45 @@ RSpec.describe CoinbaseIntegration::Query::AllTransactions do
           end
         end
 
-        it 'returns a Failure result' do
-          expect(subject).to be_failure
-          expect(subject.message).to eq('[TOOFAKE]: Account is obviously fake.')
+        it 'returns a Success result' do
+          expect(subject).to be_success
+          transaction_store = subject.value!
+          expect(transaction_store.values).to contain_exactly(
+            {
+              'id' => 'super-fake-transaction-id',
+              'type' => 'trade',
+              'status' => 'completed',
+              'amount' => {
+                'amount' => '0.987000',
+                'currency' => 'MKR'
+              },
+              'native_amount' => {
+                'amount' => '12.34',
+                'currency' => 'USD'
+              }
+            },
+            {
+              'id' => 'too-fake-transaction-id',
+              'type' => 'interest',
+              'status' => 'completed',
+              'amount' => {
+                'amount' => '0.1234',
+                'currency' => 'OMG'
+              },
+              'native_amount' => {
+                'amount' => '7.89',
+                'currency' => 'LOL'
+              }
+            }
+          )
           expect(mock_output).to have_received(:puts).with(
-            'WARNING: [TOOFAKE]: Account is obviously fake.'
+            'Iterating through account transactions...'
+          )
+          expect(mock_output).to have_received(:puts).with(
+            'DEBUG: [TOOFAKE]: Account is obviously fake.'
+          )
+          expect(mock_output).to have_received(:puts).with(
+            'Finished retrieving from api...'
           )
         end
       end
@@ -193,7 +227,7 @@ RSpec.describe CoinbaseIntegration::Query::AllTransactions do
             expect(subject).to be_success
             transaction_store = subject.value!
             expect(transaction_store.values).to contain_exactly(
-              { 
+              {
                 'id' => 'super-fake-transaction-id',
                 'type' => 'trade',
                 'status' => 'completed',
@@ -206,7 +240,7 @@ RSpec.describe CoinbaseIntegration::Query::AllTransactions do
                   'currency' => 'USD'
                 }
               },
-              { 
+              {
                 'id' => 'too-fake-transaction-id',
                 'type' => 'interest',
                 'status' => 'completed',
@@ -219,7 +253,7 @@ RSpec.describe CoinbaseIntegration::Query::AllTransactions do
                   'currency' => 'LOL'
                 }
               },
-              { 
+              {
                 'id' => 'charizard-transaction-id',
                 'type' => 'pokemon',
                 'status' => 'completed',
@@ -232,7 +266,7 @@ RSpec.describe CoinbaseIntegration::Query::AllTransactions do
                   'currency' => 'USD'
                 }
               },
-              { 
+              {
                 'id' => 'squirtle-transaction-id',
                 'type' => 'digimon',
                 'status' => 'completed',

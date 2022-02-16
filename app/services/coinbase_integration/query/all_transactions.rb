@@ -3,8 +3,6 @@
 module CoinbaseIntegration
   module Query
     class AllTransactions
-      class QueryFailed < StandardError; end
-
       include Results::Methods
 
       def initialize(output)
@@ -16,7 +14,7 @@ module CoinbaseIntegration
       def retrieve
         output.puts 'Iterating through account transactions...'
         account_importer.retrieve.bind do |accounts|
-          store_transactions_from(accounts)
+          store_transactions_from(accounts.values)
         end.bind do
           if stored_transactions.empty?
             fail!('No transactions to import.')
@@ -37,17 +35,16 @@ module CoinbaseIntegration
 
       attr_reader :output, :account_importer, :stored_transactions
 
-      def store_transactions_from(accounts)
-        accounts.values.each do |account|
+      def store_transactions_from(account_objects)
+        account_objects.each do |account|
           query_transactions(account['id']).or do |failure_message|
-            raise QueryFailed, "[#{account['name']}]: #{failure_message}"
+            output.puts "DEBUG: [#{account['name']}]: #{failure_message}"
+            fail!(failure_message)
           end.fmap do |transactions|
             @stored_transactions = @stored_transactions.merge(transactions.to_h)
           end
         end
         succeed!(nil)
-      rescue QueryFailed => e
-        fail!(e.message)
       end
 
       def query_transactions(account_id)
