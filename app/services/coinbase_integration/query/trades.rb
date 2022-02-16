@@ -29,12 +29,13 @@ module CoinbaseIntegration
         end
       end
 
+      attr_reader :stored_trades
       alias_method :to_h, :stored_trades
       delegate :values, to: :stored_trades
   
       private
   
-      attr_reader :output, :client, :stored_trades
+      attr_reader :output, :client
 
       def store_trade(raw_trade)
         stored_trades[raw_trade['id']] = raw_trade.with_indifferent_access
