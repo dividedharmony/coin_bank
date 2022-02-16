@@ -34,11 +34,12 @@ module CoinbaseIntegration
         end
       end
 
+      attr_reader :stored_transactions
       alias_method :to_h, :stored_transactions
   
       private
   
-      attr_reader :output, :client, :account_id, :stored_transactions
+      attr_reader :output, :client, :account_id
 
       def query_transactions(next_starting_after)
         client.transactions(account_id, starting_after_uuid: next_starting_after)
