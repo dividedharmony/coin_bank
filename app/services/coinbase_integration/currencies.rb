@@ -18,9 +18,9 @@ module CoinbaseIntegration
     end
 
     def fetch(currency_symbol)
-      find_or_create.or do
+      find_or_create(currency_symbol).or do
         raise CouldNotFindOrCreate, currency_symbol
-      end
+      end.value!
     end
 
     def find_or_create(currency_symbol)
