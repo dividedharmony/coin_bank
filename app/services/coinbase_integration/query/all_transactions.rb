@@ -7,7 +7,6 @@ module CoinbaseIntegration
 
       def initialize(output)
         @output = output
-        @client = Client.new
         @account_importer = Query::Accounts.new(output)
         @temp_transactions = {}
       end
@@ -25,7 +24,7 @@ module CoinbaseIntegration
 
       private
 
-      attr_reader :output, :client, :account_importer, :temp_transactions
+      attr_reader :output, :account_importer, :temp_transactions
 
       def retrieve_resources_from_api
         account_importer.retrieve.bind do |accounts|
