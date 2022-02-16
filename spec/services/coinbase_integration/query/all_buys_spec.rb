@@ -126,11 +126,53 @@ RSpec.describe CoinbaseIntegration::Query::AllBuys do
           end
         end
 
-        it 'returns a Failure result' do
-          expect(subject).to be_failure
-          expect(subject.message).to eq('[TOOFAKE]: Account is super sus.')
+        it 'returns a Success result' do
+          expect(subject).to be_success
+          buys_store = subject.value!
+          expect(buys_store.values).to contain_exactly(
+            {
+              'id' => 'b3c6ca6b-bulbasaur-1d3ecbe8d11d',
+              'created_at' => '2021-05-23T11:45:23Z',
+              'fee' => {
+                'amount' => '132.84',
+                'currency' => 'USD'
+              },
+              'amount' => {
+                'amount' => '104.59283131',
+                'currency' => 'DAI'
+              },
+              'total' => {
+                'amount' => '239.00',
+                'currency' => 'USD'
+              },
+              'subtotal' => {
+                'amount' => '104.59',
+                'currency' => 'USD'
+              }
+            },
+            {
+              'id' => 'a3c6ca6b-mimikyu-1d3ecbe8d11d',
+              'created_at' => '2021-05-22T11:45:23Z',
+              'fee' => {
+                'amount' => '32.84',
+                'currency' => 'USD'
+              },
+              'amount' => {
+                'amount' => '4.59283131',
+                'currency' => 'DAI'
+              },
+              'total' => {
+                'amount' => '39.00',
+                'currency' => 'USD'
+              },
+              'subtotal' => {
+                'amount' => '4.59',
+                'currency' => 'USD'
+              }
+            }
+          )
           expect(mock_output).to have_received(:puts).with(
-            'WARNING: [TOOFAKE]: Account is super sus.'
+            'DEBUG: [TOOFAKE]: Account is super sus.'
           )
         end
       end
@@ -261,7 +303,7 @@ RSpec.describe CoinbaseIntegration::Query::AllBuys do
             expect(subject).to be_success
             buys_store = subject.value!
             expect(buys_store.values).to contain_exactly(
-              { 
+              {
                 'id' => 'b3c6ca6b-bulbasaur-1d3ecbe8d11d',
                 'created_at' => '2021-05-23T11:45:23Z',
                 'fee' => {
@@ -281,7 +323,7 @@ RSpec.describe CoinbaseIntegration::Query::AllBuys do
                   'currency' => 'USD'
                 }
               },
-              { 
+              {
                 'id' => 'a3c6ca6b-mimikyu-1d3ecbe8d11d',
                 'created_at' => '2021-05-22T11:45:23Z',
                 'fee' => {
@@ -301,7 +343,7 @@ RSpec.describe CoinbaseIntegration::Query::AllBuys do
                   'currency' => 'USD'
                 }
               },
-              { 
+              {
                 'id' => '93c6ca6b-munchlax-1d3ecbe8d11d',
                 'created_at' => '2021-05-21T11:45:23Z',
                 'fee' => {
