@@ -20,6 +20,13 @@ module CoinbaseIntegration
       )
     end
 
+    def buys(account_uuid, starting_after_uuid: nil)
+      request(
+        "/v2/accounts/#{account_uuid}/buys",
+        params: { starting_after: starting_after_uuid }
+      )
+    end
+
     def trades
       request("/v2/trades")
     end

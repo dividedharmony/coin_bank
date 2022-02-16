@@ -185,6 +185,148 @@ RSpec.describe CoinbaseIntegration::Client, vcr: { record: :none } do
     end
   end
 
+  describe '#buys' do
+    let(:account_uuid) { '265d3b77-0adb-5c47-ad35-6572578475a5' }
+
+    subject do
+      client.buys(account_uuid, starting_after_uuid: starting_after_uuid)
+    end
+
+    context 'if starting_after is nil' do
+      let(:starting_after_uuid) { nil }
+
+      context 'if server response is not success' do
+        before do
+          mock_headers = instance_double(
+            CoinbaseIntegration::ApiHeaders,
+            to_h: {
+              'FAKE-HEADER' => 'Fake value'
+            }
+          )
+          expect(CoinbaseIntegration::ApiHeaders).to receive(:new) { mock_headers }
+        end
+
+        it 'returns a Failure result' do
+          expect(subject).to be_failure
+          expect(subject.message).to eq('The access token is invalid')
+        end
+      end
+
+      context 'if server response is success' do
+        it 'returns a Success result' do
+          expect(subject).to be_success
+          resource_obj = subject.value!
+          expect(resource_obj.data.size).to eq(2)
+          expect(resource_obj.data.first).to include(
+            'id' => 'b92b1981-9b4a-562f-bcf0-41c8d3a71e19',
+            "amount" => {
+              "amount"=>"287.00105717",
+              "currency"=>"DAI"
+            },
+            "fee" => {
+              "amount"=>"11.51",
+              "currency"=>"USD"
+            },
+            "subtotal" => {
+              "amount"=>"288.49",
+              "currency"=>"USD"
+            },
+            "total" => {
+              "amount"=>"300.00",
+              "currency"=>"USD"
+            }
+          )
+          expect(resource_obj.data.last).to include(
+            'id' => '3b7e8af2-68da-58ce-bfb8-3cb3936a6847',
+            "amount" => {
+              "amount"=>"47.78200966",
+              "currency"=>"DAI"
+            },
+            "fee" => {
+              "amount"=>"1.99",
+              "currency"=>"USD"
+            },
+            "subtotal" => {
+              "amount"=>"48.01",
+              "currency"=>"USD"
+            },
+            "total" => {
+              "amount"=>"50.00",
+              "currency"=>"USD"
+            }
+          )
+        end
+      end
+    end
+
+    context 'if starting_after is present' do
+      let(:starting_after_uuid) { '92c6ca6b-f8fa-568f-b058-1d3ecbe8d11d' }
+
+      context 'if server response is not success' do
+        before do
+          mock_headers = instance_double(
+            CoinbaseIntegration::ApiHeaders,
+            to_h: {
+              'FAKE-HEADER' => 'Fake value'
+            }
+          )
+          expect(CoinbaseIntegration::ApiHeaders).to receive(:new) { mock_headers }
+        end
+
+        it 'returns a Failure result' do
+          expect(subject).to be_failure
+          expect(subject.message).to eq('The access token is invalid')
+        end
+      end
+
+      context 'if server response is success' do
+        it 'returns a Success result' do
+          expect(subject).to be_success
+          resource_obj = subject.value!
+          expect(resource_obj.data.size).to eq(2)
+          expect(resource_obj.data.first).to include(
+            'id' => '0fc184bc-c8bf-54fc-a0d2-576c315df22d',
+            "amount" => {
+              "amount"=>"95.82348955",
+              "currency"=>"DAI"
+            },
+            "fee" => {
+              "amount"=>"3.84",
+              "currency"=>"USD"
+            },
+            "subtotal" => {
+              "amount"=>"96.16",
+              "currency"=>"USD"
+            },
+            "total" => {
+              "amount"=>"100.00",
+              "currency"=>"USD"
+            }
+          )
+          expect(resource_obj.data.last).to include(
+            'id' => '3b7e8af2-68da-58ce-bfb8-3cb3936a6847',
+            "amount" => {
+              "amount"=>"47.78200966",
+              "currency"=>"DAI"
+            },
+            "fee" => {
+              "amount"=>"1.99",
+              "currency"=>"USD"
+            },
+            "subtotal" => {
+              "amount"=>"48.01",
+              "currency"=>"USD"
+            },
+            "total" => {
+              "amount"=>"50.00",
+              "currency"=>"USD"
+            }
+          )
+        end
+      end
+    end
+  end
+
   describe '#trades' do
     subject { client.trades }
 

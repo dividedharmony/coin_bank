@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coinbase.com/v2/accounts/265d3b77-0adb-5c47-ad35-6572578475a5/buys?starting_after=92c6ca6b-f8fa-568f-b058-1d3ecbe8d11d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Cb-Access-Key:
+      - "<COINBASE_API_KEY>"
+      Cb-Access-Sign:
+      - 7b95c1c1e35847efe4564bea39b8cad40dfcf7e951f7dd11e8057c717817907d
+      Cb-Access-Timestamp:
+      - '1645043803'
+      Cb-Version:
+      - '2021-03-31'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Feb 2022 20:36:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, no-cache, must-revalidate
+      Content-Disposition:
+      - attachment; filename=response.json
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.coinbase.com; child-src ''self'' https://www.coinbase.com
+        https://fast.wistia.net https://*.online-metrix.net https://*.wpstn.com https://netverify.com
+        https://platform.twitter.com https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/
+        https://cdn.plaid.com/link/ https://*.doubleclick.net/ blob:; connect-src
+        ''self'' https://www.coinbase.com https://api.coinbase.com https://*.online-metrix.net
+        https://api.cloudinary.com https://ott9.wpstn.com/live https://api.amplitude.com/
+        https://api2.amplitude.com/ https://d3907m2cqladbn.cloudfront.net/ https://exceptions.coinbase.com
+        https://assets.coinbase.com/ https://sessions.coinbase.com/ https://dynamic-assets.coinbase.com/
+        https://events-service.coinbase.com/amp static.coinbase.com wss://ws.coinbase.com
+        wss://ws.coinbase.com:443 https://www.coinbase.com/api; font-src ''self''
+        https://www.coinbase.com https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; img-src ''self'' data: https://www.coinbase.com https://images.coinbase.com
+        https://d3907m2cqladbn.cloudfront.net/ https://static-assets.coinbase.com/
+        https://dynamic-assets.coinbase.com/ https://exceptions.coinbase.com https://coinbase-uploads.s3.amazonaws.com
+        https://s3.amazonaws.com/app-public/ https://maps.gstatic.com https://ssl.google-analytics.com
+        https://www.google.com https://maps.googleapis.com https://csi.gstatic.com
+        https://www.google-analytics.com https://res.cloudinary.com https://secure.gravatar.com
+        https://i2.wp.com https://*.online-metrix.net https://assets.coinbase.com/
+        https://hexagon-analytics.com https://cb-brand.s3.amazonaws.com https://googleads.g.doubleclick.net
+        https://stats.g.doubleclick.net/r/collect https://card.coinbase.com/ blob:
+        static.coinbase.com https://www.facebook.com/tr; media-src ''self'' https://www.coinbase.com
+        blob:; object-src ''self'' data: blob: https://www.coinbase.com https://cdn.siftscience.com
+        https://*.online-metrix.net https://www.gstatic.com https://www.google.com/recaptcha/api/
+        https://recaptcha.net/recaptcha/; script-src ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https://www.coinbase.com https://fast.wistia.com/assets/external/E-v1.js https://cdn.siftscience.com
+        https://*.google-analytics.com https://www.google.com https://www.gstatic.com
+        https://*.online-metrix.net https://code.jquery.com https://chart.googleapis.com
+        https://maps.googleapis.com https://maps.gstatic.com https://netverify.com
+        https://ajax.cloudflare.com https://cdn.plaid.com/link/v2/stable/ https://www.googletagmanager.com/gtag/js
+        https://www.googletagmanager.com/gtm.js https://www.googleadservices.com https://googleads.g.doubleclick.net
+        https://recaptcha.net https://assets.coinbase.com/ https://card.coinbase.com/
+        static.coinbase.com; style-src ''self'' ''unsafe-inline'' https://www.coinbase.com
+        https://assets.coinbase.com/ https://card.coinbase.com/ static.coinbase.com;
+        report-uri /csp-report'
+      Etag:
+      - W/"7c7c7b322ba441a6db029b8d7a63fa7c"
+      Expect-Ct:
+      - enforce, max-age=86400, report-uri="https://coinbase.report-uri.io/r/default/ct/reportOnly"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - __cf_bm=lZNO9niKDGXa_FjITwNmFWyxZ6NJ48SHMedW7RVRSn8-1645043803-0-AbQCgswy8Wlu8PrcekNiBZNb2D+ThMcjgSxJG79sXkf2NZUlprW92izXCa/LQD+Uxo0Sc+jcHRX39rA6uoDk+qw=;
+        path=/; expires=Wed, 16-Feb-22 21:06:43 GMT; domain=.coinbase.com; HttpOnly;
+        Secure; SameSite=None
+      - _coinbase_session=OWpaQXlRNDlrOFlvbmNTSStUYmFVS1RObEVZVFh1a3loRUpoM1k4Qnp0aGkzQ2ExaVlVY3pNemJRaVVNdUFJRmM0QlEyZFZTZTNyWk5nU3E3T1k4S0JaNUM3elUzaklnckNwbUx0MEhxRGlnVXpuTDNkMUhLT2tFVGxTMGRlLzgtLWNLS2FCa3V1YmhLOENWcXNsTjR4Wmc9PQ%3D%3D--f1929c0183bfdaecccbd8d5497310f3aa89aa9c6;
+        path=/; secure; HttpOnly
+      - amplitude_device_id=087935ad-14b0-4e07-8743-57acf6f150ca; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 20:36:43 GMT; secure; SameSite=Lax
+      - cb_dm=45bad279-37ca-44f2-9e7d-8c986272f64a; Path=/; Domain=coinbase.com; Expires=Mon,
+        16 Feb 2032 20:36:43 GMT; HttpOnly; Secure
+      - coinbase_device_id=087935ad-14b0-4e07-8743-57acf6f150ca; domain=.coinbase.com;
+        path=/; expires=Sun, 16 Feb 2042 20:36:43 GMT; secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Trace-Id:
+      - '1066118818545725134'
+      Vary:
+      - Origin,Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Proof-of-Work
+      X-Request-Id:
+      - 24ce7535-109c-4bb5-b0c0-c7a973bbf28f
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6de991da2cf2196b-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination":{"ending_before":null,"starting_after":"92c6ca6b-f8fa-568f-b058-1d3ecbe8d11d","previous_ending_before":"0fc184bc-c8bf-54fc-a0d2-576c315df22d","next_starting_after":null,"limit":25,"order":"desc","previous_uri":"/v2/accounts/265d3b77-0adb-5c47-ad35-6572578475a5/buys?ending_before=0fc184bc-c8bf-54fc-a0d2-576c315df22d","next_uri":null},"data":[{"id":"0fc184bc-c8bf-54fc-a0d2-576c315df22d","status":"completed","transaction":{"id":"545becf3-97e5-557d-965c-9c0b6e6f72d2","resource":"transaction","resource_path":"/v2/accounts/265d3b77-0adb-5c47-ad35-6572578475a5/transactions/545becf3-97e5-557d-965c-9c0b6e6f72d2"},"user_reference":"8FFQUFKL","created_at":"2021-05-19T16:36:28Z","updated_at":"2021-05-19T16:36:37Z","resource":"buy","resource_path":"/v2/accounts/265d3b77-0adb-5c47-ad35-6572578475a5/buys/0fc184bc-c8bf-54fc-a0d2-576c315df22d","payment_method":{"id":"e58ed69b-c6be-54c5-bbe6-40a2afe2e318","resource":"payment_method","resource_path":"/v2/payment-methods/e58ed69b-c6be-54c5-bbe6-40a2afe2e318"},"committed":true,"payout_at":"2021-05-19T16:36:30Z","instant":true,"fee":{"amount":"3.84","currency":"USD"},"amount":{"amount":"95.82348955","currency":"DAI"},"total":{"amount":"100.00","currency":"USD"},"subtotal":{"amount":"96.16","currency":"USD"},"unit_price":{"amount":"1.0035","currency":"USD","scale":4},"hold_until":null,"hold_days":0,"idem":"26d096c9-0d40-4a11-845e-2e5447a92bc3","next_step":null,"is_first_buy":false,"requires_completion_step":false},{"id":"3b7e8af2-68da-58ce-bfb8-3cb3936a6847","status":"completed","transaction":{"id":"1a849eba-5b0b-5c8a-8bd2-41ad7ea989b8","resource":"transaction","resource_path":"/v2/accounts/265d3b77-0adb-5c47-ad35-6572578475a5/transactions/1a849eba-5b0b-5c8a-8bd2-41ad7ea989b8"},"user_reference":"B75CSFHM","created_at":"2021-04-12T09:22:01Z","updated_at":"2021-04-12T09:22:28Z","resource":"buy","resource_path":"/v2/accounts/265d3b77-0adb-5c47-ad35-6572578475a5/buys/3b7e8af2-68da-58ce-bfb8-3cb3936a6847","payment_method":{"id":"e58ed69b-c6be-54c5-bbe6-40a2afe2e318","resource":"payment_method","resource_path":"/v2/payment-methods/e58ed69b-c6be-54c5-bbe6-40a2afe2e318"},"committed":true,"payout_at":"2021-04-12T09:22:21Z","instant":true,"fee":{"amount":"1.99","currency":"USD"},"amount":{"amount":"47.78200966","currency":"DAI"},"total":{"amount":"50.00","currency":"USD"},"subtotal":{"amount":"48.01","currency":"USD"},"unit_price":{"amount":"1.0048","currency":"USD","scale":4},"hold_until":null,"hold_days":0,"idem":"91a62b12-ab6b-4a9b-b2b4-8f3a47649cb9","next_step":null,"is_first_buy":false,"requires_completion_step":false}]}'
+  recorded_at: Wed, 16 Feb 2022 20:36:44 GMT
+recorded_with: VCR 6.0.0
