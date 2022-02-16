@@ -13,7 +13,7 @@ module CoinbaseIntegration
         @currencies = currencies
       end
 
-      def import!(raw_trade)
+      def import!(user, raw_trade)
         raw_input = raw_trade.fetch('input_amount')
         raw_output = raw_trade.fetch('output_amount')
 
