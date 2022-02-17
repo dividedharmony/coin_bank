@@ -18,7 +18,7 @@ RSpec.describe CoinbaseIntegration::Import::TradeTransaction do
         {
           'created_at' => '2021-04-24T01:09:12Z',
           'display_input_amount' => {
-            'amount' => '15.00',
+            'amount' => '14.51',
             'currency' => 'USD'
           },
           'id' => '1ed7e-yabba-dabba-do-cc4949',
@@ -51,6 +51,7 @@ RSpec.describe CoinbaseIntegration::Import::TradeTransaction do
           expect(subject.from_amount).to eq(BigDecimal('14.99744294'))
           expect(subject.to_amount).to eq(BigDecimal('0.00028741'))
           expect(subject.exchange_rate).to eq(BigDecimal('0.00001916'))
+          expect(subject.native_amount).to eq(14.51)
           expect(subject.transacted_at).to eq('2021-04-24T01:09:12Z'.to_datetime)
           expect(subject.coinbase_uuid).to eq('1ed7e-yabba-dabba-do-cc4949')
           expect(subject.fees).to be_empty
@@ -66,7 +67,7 @@ RSpec.describe CoinbaseIntegration::Import::TradeTransaction do
         {
           'created_at' => '2021-04-26T01:09:12Z',
           'display_input_amount' => {
-            'amount' => '15.00',
+            'amount' => '16.02',
             'currency' => 'USD'
           },
           'id' => '1ed7e-fire-and-ice-cc4948',
@@ -104,6 +105,7 @@ RSpec.describe CoinbaseIntegration::Import::TradeTransaction do
           expect(subject.from_amount).to eq(BigDecimal('29.99744294'))
           expect(subject.to_amount).to eq(BigDecimal('0.00078741'))
           expect(subject.exchange_rate).to eq(BigDecimal('0.00004416'))
+          expect(subject.native_amount).to eq(16.02)
           expect(subject.transacted_at).to eq('2021-04-26T01:09:12Z'.to_datetime)
           expect(subject.coinbase_uuid).to eq('1ed7e-fire-and-ice-cc4948')
           expect(subject.fees.count).to eq(1)
