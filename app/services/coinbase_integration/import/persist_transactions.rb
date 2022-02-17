@@ -3,6 +3,7 @@
 module CoinbaseIntegration
   module Import
     class PersistTransactions
+      class QueryFailed < StandardError; end
       class TradeNotFound < StandardError
         def initialize(trade_id)
           super("Could not find trade object with 'id' #{trade_id}")
@@ -38,6 +39,7 @@ module CoinbaseIntegration
             end
           end
           output.puts 'FINISHED IMPORT!!'
+          succeed!(self)
         end
       end
 
@@ -48,7 +50,7 @@ module CoinbaseIntegration
 
       def query_trades
         Query::Trades.new(output).retrieve.or do |failure_message|
-          raise StandardError, "WARNING: #{failure_message}"
+          raise QueryFailed, "WARNING: #{failure_message}"
         end.fmap do |trades_result|
           @trades = trades_result.to_h
         end
@@ -61,8 +63,8 @@ module CoinbaseIntegration
       def import_trade_transaction(raw_transaction)
         transaction_uuid = raw_transaction['id']
         trade_id = raw_transaction['trade'].fetch('id')
-        return finished_trades.include?(trade_id) || finished_transactions.include?(transaction_uuid)
-        raw_trade = raw_trades[trade_id]
+        return if finished_trades.include?(trade_id) || finished_transactions.include?(transaction_uuid)
+        raw_trade = trades[trade_id]
         raise TradeNotFound, trade_id if raw_trade.nil?
 
         trade_importer.import!(user, raw_trade)
@@ -75,7 +77,7 @@ module CoinbaseIntegration
         transaction_uuid = raw_transaction['id']
         return if finished_transactions.include?(transaction_uuid)
 
-        NonTradeTransaction.impot!(user, raw_transaction)
+        non_trade_importer.import!(user, raw_transaction)
         output.puts ".........successfully persisted NON-TRADE #{raw_transaction['type']} transaction"
         finished_transactions << transaction_uuid
       end
