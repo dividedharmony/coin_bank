@@ -9,7 +9,7 @@ module CoinbaseIntegration
 
       def import!(user, raw_transaction)
         transaction_struct = TransactionStruct.new(raw_transaction)
-        CoinBank::Transaction.new(
+        CoinBank::Transaction.create!(
           user: user,
           from_currency: currencies.fetch(transaction_struct.from_currency_symbol),
           from_amount: transaction_struct.from_amount,
