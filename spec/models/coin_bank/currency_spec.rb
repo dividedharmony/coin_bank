@@ -48,6 +48,16 @@ RSpec.describe CoinBank::Currency do
 
       it { is_expected.to contain_exactly(cryptocurrency) }
     end
+
+    describe ".unstable" do
+      subject { described_class.unstable }
+
+      let!(:fiat_currency) { create(:currency, fiat: true) }
+      let!(:stablecoin) { create(:currency, fiat: false, stablecoin: true) }
+      let!(:unstable_currency) { create(:currency, fiat: false, stablecoin: false) }
+
+      it { is_expected.to contain_exactly(unstable_currency) }
+    end
   end
 
   describe "#crypto?" do

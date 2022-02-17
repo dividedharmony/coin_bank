@@ -19,6 +19,7 @@ module CoinBank
 
     scope :fiat, -> { where(fiat: true) }
     scope :crypto, -> { where(fiat: false) }
+    scope :unstable, -> { where(fiat: false, stablecoin: false) }
 
     def crypto?
       !fiat?
