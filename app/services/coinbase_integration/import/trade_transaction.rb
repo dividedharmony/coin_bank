@@ -20,8 +20,6 @@ module CoinbaseIntegration
         from_currency = currencies.fetch(raw_input.fetch('currency'))
         to_currency = currencies.fetch(raw_output.fetch('currency'))
 
-        raw_fee = raw_trade.fetch('fee')
-
         CoinBank::Transaction.create!(
           user: user,
           from_currency: from_currency,
@@ -31,8 +29,8 @@ module CoinbaseIntegration
           exchange_rate: raw_trade.fetch('exchange_rate').fetch('amount'),
           transacted_at: raw_trade.fetch('created_at').to_datetime,
           coinbase_uuid: raw_trade.fetch('id'),
-          coin_bank_fees_attributes: [
-            build_fee(raw_trade, currencies)
+          fees_attributes: [
+            build_fee(user, raw_trade, currencies)
           ]
         )
       end
@@ -41,11 +39,12 @@ module CoinbaseIntegration
 
       attr_reader :currencies
 
-      def build_fee(raw_trade, currencies)
+      def build_fee(user, raw_trade, currencies)
         raw_fee = raw_trade['fee']
         return {} if raw_fee.blank?
 
         {
+          user: user,
           amount: raw_fee.fetch('amount'),
           currency: currencies.fetch(raw_fee.fetch('currency'))
         }
