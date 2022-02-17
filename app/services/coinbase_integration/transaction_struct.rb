@@ -35,6 +35,7 @@ module CoinbaseIntegration
                 :native_value,
                 :native_currency_sym,
                 :transacted_at
+    alias_method :native_amount, :native_value
 
     def from_currency_symbol
       case type

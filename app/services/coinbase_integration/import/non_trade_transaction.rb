@@ -15,6 +15,7 @@ module CoinbaseIntegration
           from_amount: transaction_struct.from_amount,
           to_currency: currencies.fetch(transaction_struct.to_currency_symbol),
           to_amount: transaction_struct.to_amount,
+          native_amount: transaction_struct.native_amount,
           exchange_rate: transaction_struct.exchange_rate,
           transacted_at: transaction_struct.transacted_at,
           coinbase_uuid: transaction_struct.coinbase_uuid

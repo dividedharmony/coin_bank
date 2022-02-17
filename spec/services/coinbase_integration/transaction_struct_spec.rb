@@ -167,6 +167,12 @@ RSpec.describe CoinbaseIntegration::TransactionStruct do
     end
   end
 
+  describe '#native_amount' do
+    subject { transaction_struct.native_amount }
+
+    it { is_expected.to eq(300.03) }
+  end
+
   describe '#transacted_at' do
     subject { transaction_struct.transacted_at }
 
