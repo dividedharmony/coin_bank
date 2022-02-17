@@ -23,6 +23,17 @@ FactoryBot.define do
       "BFORK#{n}"
     end
     logo_url { "https://www.example.com/fake_logo.png" }
+
+    trait :usd do
+      name { 'US Dollar' }
+      symbol { 'USD' }
+      fiat { true }
+    end
+
+    trait :unstable do
+      fiat { false }
+      stablecoin { false }
+    end
   end
 
   factory :balance, class: CoinBank::Balance do
@@ -37,6 +48,7 @@ FactoryBot.define do
     transacted_at { 3.days.ago }
     from_amount { 3.14 }
     to_amount { 6.28 }
+    native_amount { 95.01 }
     exchange_rate { 2 }
   end
 
