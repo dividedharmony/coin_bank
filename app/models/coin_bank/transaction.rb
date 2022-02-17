@@ -13,6 +13,7 @@ module CoinBank
     validates :from_amount,
               :to_amount,
               :exchange_rate,
+              :native_amount,
               numericality: true
 
     private

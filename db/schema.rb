@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_032349) do
+ActiveRecord::Schema.define(version: 2022_02_17_045101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_032349) do
     t.string "coinbase_uuid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "native_amount", precision: 20, scale: 10, default: "0.0", null: false
     t.index ["coinbase_uuid"], name: "index_coin_bank_transactions_on_coinbase_uuid"
     t.index ["from_currency_id"], name: "index_coin_bank_transactions_on_from_currency_id"
     t.index ["to_currency_id"], name: "index_coin_bank_transactions_on_to_currency_id"
