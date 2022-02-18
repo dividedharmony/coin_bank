@@ -33,14 +33,15 @@ module CoinbaseIntegration
         end
       end
 
-      delegate :values, to: :stored_accounts
+      delegate :values, :[], to: :stored_accounts
   
       private
   
       attr_reader :output, :client, :stored_accounts
 
       def store_account(raw_account)
-        stored_accounts[raw_account['id']] = raw_account.with_indifferent_access
+        currency_code = raw_account.fetch('currency').fetch('code')
+        stored_accounts[currency_code] = raw_account.with_indifferent_access
       end
     end
   end
