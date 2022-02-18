@@ -13,6 +13,10 @@ module CoinbaseIntegration
       request("/v2/accounts", params: { starting_after: starting_after_uuid })
     end
 
+    def exchange_rates(currency_symbol)
+      request('/v2/exchange-rates', params: { currency: currency_symbol })
+    end
+
     def transactions(account_uuid, starting_after_uuid: nil)
       request(
         "/v2/accounts/#{account_uuid}/transactions",
