@@ -37,6 +37,9 @@ gem 'faraday'
 # Discord client
 gem 'discordrb'
 
+# Sidekiq async operations
+gem 'sidekiq'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
