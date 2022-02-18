@@ -19,7 +19,7 @@ namespace :populate do
           symbol: raw_currency.fetch('code'),
           name: raw_currency.fetch('name'),
           slug: raw_currency.fetch('slug'),
-          cmc_id: raw_currency.fetch('asset_id'),
+          cmc_id: raw_currency.fetch('id'),
           logo_url: 'https://www.example.com/fake/logo.png'
         )
       end
