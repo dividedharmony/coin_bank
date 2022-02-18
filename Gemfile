@@ -34,6 +34,9 @@ gem 'devise'
 # Domain Logic Dependencies
 gem 'faraday'
 
+# Discord client
+gem 'discordrb'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
