@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/boot'
+require 'rails/all'
+require 'zeitwerk'
+require 'discordrb'
+
+# Load gems
+Bundler.require(*Rails.groups)
+
+# load .env
+unless Rails.env.production?
+  Dotenv::Railtie.load
+end
+
+# load local files
+loader = Zeitwerk::Loader.new
+loader.push_dir('./app/services')
+loader.push_dir('./app/models')
+loader.setup
+
+DISCORD_CHANNEL_ID = ENV.fetch('DISCORD_CHANNEL_ID').to_i
+
+bot = Discordrb::Commands::CommandBot.new(
+  token: ENV["DISCORD_TOKEN"],
+  prefix: '?'
+)
+
+# Set my user permissions to the highest level
+if ENV['DEVELOPER_ID']
+  bot.set_user_permission(ENV['DEVELOPER_ID'].to_i, 5)
+end
+
+bot.command(:refresh, permission_level: 5) do |event|
+  if event.channel.id == DISCORD_CHANNEL_ID
+    # Send immediate message as ValuationStatus can take a while
+    bot.send_message(event.channel.id, "Calculating...\nShould have a result within 60 seconds...\n...")
+    DiscordIntegration::ValuationStatus.new.formatted_message
+  else
+    'Inappropriate channel for given command'
+  end
+end
+
+bot.run
