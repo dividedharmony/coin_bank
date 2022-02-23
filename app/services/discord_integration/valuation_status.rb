@@ -22,8 +22,6 @@ module DiscordIntegration
         .new(STDOUT)
         .retrieve
         .value!
-      @payloads = []
-      compile_payloads
     end
 
     def formatted_message
@@ -35,7 +33,7 @@ module DiscordIntegration
 
     private
 
-    attr_reader :accounts, :payloads
+    attr_reader :accounts
 
     def formatted_stats
       payloads.map do |payload|
@@ -47,31 +45,29 @@ module DiscordIntegration
       end.join("\n")
     end
 
-    def compile_payloads
-      CURRENCIES_AND_TARGET_VALUATIONS.each do |sym, target_val|
-        currency = CoinBank::Currency.find_by!(symbol: sym)
-        usd_val = usd_value(currency)
-        account_bal = account_balance(currency)
-        actual_value = usd_val * account_bal
-        payloads << {
-          name: currency.name,
-          symbol: currency.symbol,
-          dollar_value: usd_val,
-          account_balance: account_bal,
-          actual_value: actual_value,
-          target_value: target_val,
-          percent_of_target: actual_value / target_val
-        }
-      end
+    def payloads
+      CURRENCIES_AND_TARGET_VALUATIONS.map(&method(:compile_payload))
     end
 
-    def account_balance(currency)
-      raw_account = accounts[currency.symbol]
-      BigDecimal(raw_account.fetch('balance').fetch('amount'))
+    def compile_payload(currency_symbol, target_value)
+      raw_account = accounts.fetch(currency_symbol)
+      account_balance = BigDecimal(raw_account.fetch('balance').fetch('amount'))
+      dollar_value = query_usd_value(currency_symbol)
+      actual_value = dollar_value * account_balance
+
+      # @return hash
+      {
+        symbol: currency_symbol,
+        dollar_value: dollar_value,
+        account_balance: account_balance,
+        actual_value: actual_value,
+        target_value: target_value,
+        percent_of_target: actual_value / target_value
+      }
     end
 
-    def usd_value(currency)
-      response = CoinbaseIntegration::Client.new.exchange_rates(currency.symbol).value!
+    def query_usd_value(currency_symbol)
+      response = CoinbaseIntegration::Client.new.exchange_rates(currency_symbol).value!
       BigDecimal(response.data.fetch('rates').fetch('USD'))
     end
   end

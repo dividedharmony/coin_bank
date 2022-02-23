@@ -33,7 +33,7 @@ module CoinbaseIntegration
         end
       end
 
-      delegate :values, :[], to: :stored_accounts
+      delegate :values, :[], :fetch, to: :stored_accounts
   
       private
   
