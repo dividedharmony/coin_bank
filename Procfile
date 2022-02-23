@@ -1,0 +1,1 @@
+discordbot: bin/discord-server
