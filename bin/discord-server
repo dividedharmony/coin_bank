@@ -35,7 +35,7 @@ bot.command(:refresh, permission_level: 5) do |event|
   if event.channel.id == DISCORD_CHANNEL_ID
     # Send immediate message as ValuationStatus can take a while
     bot.send_message(event.channel.id, "Calculating...\nShould have a result within 60 seconds...\n...")
-    DiscordIntegration::ValuationStatus.new.formatted_message
+    DiscordIntegration::ValuationSummary.formatted_message
   else
     'Inappropriate channel for given command'
   end
