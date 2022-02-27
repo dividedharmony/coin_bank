@@ -52,11 +52,11 @@ module DiscordIntegration
     end
 
     def actual_value
-      @actual_value ||= dollar_value * account_balance
+      @actual_value ||= (dollar_value * account_balance).round(3)
     end
 
     def percent_of_target
-      actual_value / target_value
+      (actual_value / target_value).round(3)
     end
 
     private
