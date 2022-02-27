@@ -8,6 +8,6 @@ namespace :discord do
       token: ENV.fetch('DISCORD_TOKEN')
     )
     channel_id = ENV.fetch('DISCORD_CHANNEL_ID')
-    bot.send_message(channel_id, DiscordIntegration::ValuationStatus.new.formatted_message)
+    bot.send_message(channel_id, DiscordIntegration::ValuationSummary.formatted_message)
   end
 end
