@@ -4,12 +4,14 @@ require 'discordrb'
 
 module DiscordIntegration
   class ValuationSummary
+    VERSION_DATE = '2022-02-28'
+
     class << self
       def formatted_message
         <<~TEXT
           Report date: _#{Time.now.strftime("%H:%M %B %d, %Y")}_
           #{formatted_stats}
-          -- _integration version: 2022-02-26_ --
+          -- _integration version: #{VERSION_DATE}_ --
         TEXT
       end
 
