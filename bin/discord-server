@@ -20,10 +20,11 @@ loader.push_dir('./app/models')
 loader.setup
 
 DISCORD_CHANNEL_ID = ENV.fetch('DISCORD_CHANNEL_ID').to_i
+COMMAND_PREFIX = Rails.env.production? ? '?' : 'dev?'
 
 bot = Discordrb::Commands::CommandBot.new(
   token: ENV["DISCORD_TOKEN"],
-  prefix: '?'
+  prefix: COMMAND_PREFIX
 )
 
 # Set my user permissions to the highest level
