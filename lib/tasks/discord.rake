@@ -16,22 +16,18 @@ namespace :discord do
   task alert_high_valuations: :environment do
     require 'discordrb'
 
-    high_value_threshold = 0.92
-
     bot = Discordrb::Commands::CommandBot.new(
       token: ENV.fetch('DISCORD_TOKEN')
     )
     channel_id = ENV.fetch('DISCORD_CHANNEL_ID')
     developer_id = ENV.fetch('DEVELOPER_ID')
 
-    messages = DiscordIntegration::ValuationAlert
-      .new(high_value_threshold)
-      .formatted_messages
+    messages = DiscordIntegration::ValuationAlert.formatted_messages
 
     if messages.any?
       currency_string = messages.count == 1 ? 'currency' : 'currencies'
       combined_message = <<~TEXT
-        <@#{developer_id}> ALERT **#{messages.count} #{currency_string}** have exceeded the #{high_value_threshold} threshold.
+        <@#{developer_id}> ALERT **#{messages.count} #{currency_string}** have exceeded their alert threshold.
         #{messages.join("\n")}
       TEXT
       bot.send_message(channel_id, combined_message)
