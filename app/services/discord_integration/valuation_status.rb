@@ -5,8 +5,6 @@ require 'discordrb'
 module DiscordIntegration
   class ValuationStatus
     CURRENCIES_AND_TARGET_VALUATIONS = {
-      "BTC"=>1557.8,
-      "ETH"=>1865.85,
       "BCH"=>685.0,
       "ETC"=>325.0,
       "MKR"=>299.0,
@@ -14,7 +12,6 @@ module DiscordIntegration
       "LINK"=>398.59,
       "LTC"=>559.16,
       "ALGO"=>494.61,
-      "ADA"=>348.0
     }.freeze
 
     class << self
