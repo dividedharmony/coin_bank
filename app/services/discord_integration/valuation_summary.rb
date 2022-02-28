@@ -17,7 +17,7 @@ module DiscordIntegration
 
       def formatted_stats
         ValuationStatus.all.map do |valuation_status|
-          alert = valuation_status.percent_of_target > 0.8 ? '**ALERT**' : '.....'
+          alert = valuation_status.alert? ? '**ALERT**' : '.....'
           "#{alert} #{valuation_status.currency_symbol} - #{valuation_status.percent_of_target}   (#{valuation_status.actual_value}/#{valuation_status.target_value})"
         end.join("\n")
       end
