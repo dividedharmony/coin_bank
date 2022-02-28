@@ -5,20 +5,46 @@ require 'discordrb'
 module DiscordIntegration
   class ValuationStatus
     CURRENCIES_AND_TARGET_VALUATIONS = {
-      "BCH"=>685.0,
-      "ETC"=>325.0,
-      "MKR"=>299.0,
-      "COMP"=>276.68,
-      "LINK"=>398.59,
-      "LTC"=>559.16,
-      "ALGO"=>494.61,
+      "BCH" => {
+        target_value: 685.0,
+        alert_threshold: 0.85
+      },
+      "ETC" => {
+        target_value: 325.0,
+        alert_threshold: 0.55
+      },
+      "MKR" => {
+        target_value: 299.0,
+        alert_threshold: 0.5
+      },
+      "COMP" => {
+        target_value: 276.68,
+        alert_threshold: 0.5
+      },
+      "LINK" => {
+        target_value: 398.59,
+        alert_threshold: 0.62
+      },
+      "LTC" => {
+        target_value: 559.16,
+        alert_threshold: 0.75
+      },
+      "ALGO" => {
+        target_value: 494.61,
+        alert_threshold: 0.7
+      }
     }.freeze
 
     class << self
       def all
         raw_accounts = query_accounts
-        CURRENCIES_AND_TARGET_VALUATIONS.map do |currency_symbol, target_value|
-          new(raw_accounts.fetch(currency_symbol), currency_symbol, target_value)
+        CURRENCIES_AND_TARGET_VALUATIONS.map do |currency_symbol, target_data|
+          new(
+            raw_accounts.fetch(currency_symbol),
+            currency_symbol,
+            target_data[:target_value],
+            target_data[:alert_threshold]
+          )
         end
       end
 
@@ -32,13 +58,14 @@ module DiscordIntegration
       end
     end
 
-    def initialize(account, currency_symbol, target_value)
+    def initialize(account, currency_symbol, target_value, alert_threshold)
       @account = account
       @currency_symbol = currency_symbol
       @target_value = target_value
+      @alert_threshold = alert_threshold
     end
 
-    attr_reader :account, :currency_symbol, :target_value
+    attr_reader :account, :currency_symbol, :target_value, :alert_threshold
 
     def dollar_value
       @dollar_value ||= BigDecimal(exchange_rate_data.fetch('rates').fetch('USD'))
@@ -53,7 +80,11 @@ module DiscordIntegration
     end
 
     def percent_of_target
-      (actual_value / target_value).round(3)
+      @percent_of_target ||= (actual_value / target_value).round(3)
+    end
+
+    def alert?
+      percent_of_target >= alert_threshold
     end
 
     private
